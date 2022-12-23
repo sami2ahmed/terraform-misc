@@ -1,0 +1,8 @@
+topic_creation/.terraform.lock.hcltopic_creation/.terraform
+topic_creation/.terraform
+topic_creation/terraform.tfstate.backup
+topic_creation/terraform.tfstate
+creds_SA/.terraform
+creds_SA/.terraform.lock.hcl
+creds_SA/terraform.tfstate
+creds_SA/terraform.tfstate.backup
