@@ -1,0 +1,878 @@
+2022-12-14T15:19:06.181-0500 [INFO]  Terraform version: 1.1.9
+2022-12-14T15:19:06.181-0500 [INFO]  Go runtime version: go1.17.2
+2022-12-14T15:19:06.181-0500 [INFO]  CLI args: []string{"terraform", "plan"}
+2022-12-14T15:19:06.181-0500 [TRACE] Stdout is a terminal of width 158
+2022-12-14T15:19:06.181-0500 [TRACE] Stderr is a terminal of width 158
+2022-12-14T15:19:06.181-0500 [TRACE] Stdin is a terminal
+2022-12-14T15:19:06.181-0500 [DEBUG] Attempting to open CLI config file: /Users/samiahmed/.terraformrc
+2022-12-14T15:19:06.181-0500 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2022-12-14T15:19:06.182-0500 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2022-12-14T15:19:06.182-0500 [DEBUG] ignoring non-existing provider search directory /Users/samiahmed/.terraform.d/plugins
+2022-12-14T15:19:06.182-0500 [DEBUG] ignoring non-existing provider search directory /Users/samiahmed/Library/Application Support/io.terraform/plugins
+2022-12-14T15:19:06.182-0500 [DEBUG] ignoring non-existing provider search directory /Library/Application Support/io.terraform/plugins
+2022-12-14T15:19:06.182-0500 [INFO]  CLI command args: []string{"plan"}
+2022-12-14T15:19:06.184-0500 [TRACE] Meta.Backend: no config given or present on disk, so returning nil config
+2022-12-14T15:19:06.184-0500 [TRACE] Meta.Backend: backend has not previously been initialized in this working directory
+2022-12-14T15:19:06.184-0500 [DEBUG] New state was assigned lineage "76ffa0af-ffe9-60fd-77ea-3ff2ea088b67"
+2022-12-14T15:19:06.184-0500 [TRACE] Meta.Backend: using default local state only (no backend configuration, and no existing initialized backend)
+2022-12-14T15:19:06.184-0500 [TRACE] Meta.Backend: instantiated backend of type <nil>
+2022-12-14T15:19:06.185-0500 [TRACE] providercache.fillMetaCache: scanning directory .terraform/providers
+2022-12-14T15:19:06.185-0500 [TRACE] getproviders.SearchLocalDirectory: found registry.terraform.io/confluentinc/confluent v1.20.0 for darwin_amd64 at .terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64
+2022-12-14T15:19:06.185-0500 [TRACE] providercache.fillMetaCache: including .terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64 as a candidate package for registry.terraform.io/confluentinc/confluent 1.20.0
+2022-12-14T15:19:06.271-0500 [DEBUG] checking for provisioner in "."
+2022-12-14T15:19:06.274-0500 [DEBUG] checking for provisioner in "/usr/local/bin"
+2022-12-14T15:19:06.274-0500 [TRACE] Meta.Backend: backend <nil> does not support operations, so wrapping it in a local backend
+2022-12-14T15:19:06.275-0500 [INFO]  backend/local: starting Plan operation
+2022-12-14T15:19:06.275-0500 [TRACE] backend/local: requesting state manager for workspace "default"
+2022-12-14T15:19:06.275-0500 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2022-12-14T15:19:06.275-0500 [TRACE] backend/local: requesting state lock for workspace "default"
+2022-12-14T15:19:06.277-0500 [TRACE] statemgr.Filesystem: preparing to manage state snapshots at terraform.tfstate
+2022-12-14T15:19:06.278-0500 [TRACE] statemgr.Filesystem: existing snapshot has lineage "9f862e33-376f-a97e-1f7b-478fafd8413c" serial 8
+2022-12-14T15:19:06.278-0500 [TRACE] statemgr.Filesystem: locking terraform.tfstate using fcntl flock
+2022-12-14T15:19:06.278-0500 [TRACE] statemgr.Filesystem: writing lock metadata to .terraform.tfstate.lock.info
+2022-12-14T15:19:06.278-0500 [TRACE] backend/local: reading remote state for workspace "default"
+2022-12-14T15:19:06.278-0500 [TRACE] statemgr.Filesystem: reading latest snapshot from terraform.tfstate
+2022-12-14T15:19:06.278-0500 [TRACE] statemgr.Filesystem: read snapshot with lineage "9f862e33-376f-a97e-1f7b-478fafd8413c" serial 8
+2022-12-14T15:19:06.278-0500 [TRACE] backend/local: populating backend.LocalRun for current working directory
+2022-12-14T15:19:06.279-0500 [TRACE] Config.VerifyDependencySelections: provider registry.terraform.io/confluentinc/confluent has 1.20.0 to satisfy "1.20.0"
+2022-12-14T15:19:06.279-0500 [TRACE] terraform.NewContext: starting
+2022-12-14T15:19:06.279-0500 [TRACE] terraform.NewContext: complete
+2022-12-14T15:19:06.279-0500 [TRACE] backend/local: requesting interactive input, if necessary
+2022-12-14T15:19:06.279-0500 [TRACE] LoadSchemas: retrieving schema for provider type "registry.terraform.io/confluentinc/confluent"
+2022-12-14T15:19:06.279-0500 [TRACE] terraform.contextPlugins: Initializing provider "registry.terraform.io/confluentinc/confluent" to read its schema
+2022-12-14T15:19:06.279-0500 [DEBUG] created provider logger: level=trace
+2022-12-14T15:19:06.279-0500 [INFO]  provider: configuring client automatic mTLS
+2022-12-14T15:19:06.292-0500 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64/terraform-provider-confluent_1.20.0 args=[.terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64/terraform-provider-confluent_1.20.0]
+2022-12-14T15:19:06.295-0500 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64/terraform-provider-confluent_1.20.0 pid=12817
+2022-12-14T15:19:06.295-0500 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64/terraform-provider-confluent_1.20.0
+2022-12-14T15:19:06.354-0500 [INFO]  provider.terraform-provider-confluent_1.20.0: configuring server automatic mTLS: timestamp=2022-12-14T15:19:06.354-0500
+2022-12-14T15:19:06.380-0500 [DEBUG] provider: using plugin: version=5
+2022-12-14T15:19:06.380-0500 [DEBUG] provider.terraform-provider-confluent_1.20.0: plugin address: address=/var/folders/rk/jlj4x7pj4js8_8kg4bp4kncr0000gq/T/plugin3652403692 network=unix timestamp=2022-12-14T15:19:06.379-0500
+2022-12-14T15:19:06.404-0500 [TRACE] GRPCProvider: GetProviderSchema
+2022-12-14T15:19:06.404-0500 [TRACE] provider.stdio: waiting for stdio data
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: @module=sdk.proto tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:490 tf_proto_version=5.2 tf_provider_addr=provider tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:497 tf_provider_addr=provider tf_rpc=GetProviderSchema @module=sdk.proto tf_proto_version=5.2 tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Getting provider schema: @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:70 timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_resource_type=confluent_api_key tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_resource_type=confluent_cluster_link tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_provider_addr=provider timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_resource_type=confluent_kafka_cluster @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_provider_addr=provider tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_resource_type=confluent_identity_provider tf_rpc=GetProviderSchema tf_provider_addr=provider timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_rpc=GetProviderSchema tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_resource_type=confluent_kafka_topic timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_rpc=GetProviderSchema tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_resource_type=confluent_schema_registry_cluster timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_resource_type=confluent_environment @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_resource_type=confluent_kafka_client_quota tf_rpc=GetProviderSchema tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @module=sdk.helper_schema tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_resource_type=confluent_connector tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_resource_type=confluent_kafka_mirror_topic tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_resource_type=confluent_kafka_acl @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_provider_addr=provider tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_provider_addr=provider tf_rpc=GetProviderSchema tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_resource_type=confluent_service_account @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_provider_addr=provider tf_resource_type=confluent_network tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_provider_addr=provider @module=sdk.helper_schema tf_resource_type=confluent_private_link_access tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.405-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_resource_type=confluent_schema tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_resource_type=confluent_transit_gateway_attachment tf_rpc=GetProviderSchema tf_provider_addr=provider timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c @module=sdk.helper_schema tf_resource_type=confluent_kafka_cluster_config tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_resource_type=confluent_identity_pool tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_resource_type=confluent_ksql_cluster tf_rpc=GetProviderSchema @module=sdk.helper_schema timestamp=2022-12-14T15:19:06.405-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @module=sdk.helper_schema tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_provider_addr=provider tf_resource_type=confluent_peering tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_resource_type=confluent_role_binding tf_rpc=GetProviderSchema @module=sdk.helper_schema timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @module=sdk.helper_schema tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_data_source_type=confluent_user tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_data_source_type=confluent_kafka_client_quota tf_provider_addr=provider tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_data_source_type=confluent_network tf_provider_addr=provider @module=sdk.helper_schema tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @module=sdk.helper_schema tf_data_source_type=confluent_private_link_access @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_data_source_type=confluent_schema_registry_cluster tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_data_source_type=confluent_kafka_cluster tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_provider_addr=provider timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_provider_addr=provider tf_data_source_type=confluent_schema_registry_region tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @module=sdk.helper_schema tf_provider_addr=provider tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_data_source_type=confluent_schema tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_data_source_type=confluent_ksql_cluster tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_rpc=GetProviderSchema @module=sdk.helper_schema timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_data_source_type=confluent_organization tf_rpc=GetProviderSchema @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_data_source_type=confluent_peering tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_data_source_type=confluent_role_binding @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @module=sdk.helper_schema tf_provider_addr=provider tf_rpc=GetProviderSchema tf_data_source_type=confluent_transit_gateway_attachment tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_rpc=GetProviderSchema @module=sdk.helper_schema tf_data_source_type=confluent_service_account tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c @module=sdk.helper_schema tf_data_source_type=confluent_kafka_topic tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_data_source_type=confluent_environment tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_data_source_type=confluent_identity_pool tf_provider_addr=provider tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_data_source_type=confluent_identity_provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_provider_addr=provider tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: tf_provider_addr=provider tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:503 @module=sdk.proto tf_proto_version=5.2 timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.406-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:509 @module=sdk.proto tf_req_id=a6c73adf-7074-b1ba-0def-8dfa1492862c tf_rpc=GetProviderSchema tf_proto_version=5.2 tf_provider_addr=provider timestamp=2022-12-14T15:19:06.406-0500
+2022-12-14T15:19:06.409-0500 [TRACE] GRPCProvider: Close
+2022-12-14T15:19:06.410-0500 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = transport is closing"
+2022-12-14T15:19:06.412-0500 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64/terraform-provider-confluent_1.20.0 pid=12817
+2022-12-14T15:19:06.412-0500 [DEBUG] provider: plugin exited
+2022-12-14T15:19:06.412-0500 [TRACE] Context.Input: Prompting for provider arguments
+2022-12-14T15:19:06.412-0500 [TRACE] Context.Input: Provider provider.confluent declared at test.tf:9,1-21
+2022-12-14T15:19:06.413-0500 [TRACE] Context.Input: Input for provider.confluent: map[string]cty.Value{}
+2022-12-14T15:19:06.413-0500 [TRACE] backend/local: running validation operation
+2022-12-14T15:19:06.413-0500 [DEBUG] Building and walking validate graph
+2022-12-14T15:19:06.413-0500 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2022-12-14T15:19:06.413-0500 [TRACE] ConfigTransformer: Starting for path:
+2022-12-14T15:19:06.413-0500 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key - *terraform.NodeValidatableResource
+  confluent_kafka_topic.orders - *terraform.NodeValidatableResource
+  data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+  ------
+2022-12-14T15:19:06.413-0500 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2022-12-14T15:19:06.413-0500 [TRACE] Completed graph transform *terraform.RootVariableTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key - *terraform.NodeValidatableResource
+  confluent_kafka_topic.orders - *terraform.NodeValidatableResource
+  data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+  var.confluent_cloud_api_key - *terraform.NodeRootVariable
+  var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  ------
+2022-12-14T15:19:06.413-0500 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2022-12-14T15:19:06.413-0500 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2022-12-14T15:19:06.413-0500 [TRACE] Executing graph transform *terraform.LocalTransformer
+2022-12-14T15:19:06.413-0500 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2022-12-14T15:19:06.413-0500 [TRACE] Executing graph transform *terraform.OutputTransformer
+2022-12-14T15:19:06.413-0500 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2022-12-14T15:19:06.413-0500 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2022-12-14T15:19:06.413-0500 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2022-12-14T15:19:06.413-0500 [TRACE] Executing graph transform *terraform.StateTransformer
+2022-12-14T15:19:06.413-0500 [TRACE] StateTransformer: creating nodes for deposed instance objects only
+2022-12-14T15:19:06.413-0500 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2022-12-14T15:19:06.413-0500 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2022-12-14T15:19:06.413-0500 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2022-12-14T15:19:06.413-0500 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2022-12-14T15:19:06.413-0500 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2022-12-14T15:19:06.413-0500 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2022-12-14T15:19:06.413-0500 [TRACE] AttachResourceConfigTransformer: attaching to "confluent_kafka_topic.orders" (*terraform.NodeValidatableResource) config from test.tf:38,1-42
+2022-12-14T15:19:06.413-0500 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to confluent_kafka_topic.orders
+2022-12-14T15:19:06.413-0500 [TRACE] AttachResourceConfigTransformer: attaching to "data.confluent_kafka_cluster.basic" (*terraform.NodeValidatableResource) config from hcl.Range{Filename:"test.tf", Start:hcl.Pos{Line:14, Column:1, Byte:258}, End:hcl.Pos{Line:14, Column:39, Byte:296}}
+2022-12-14T15:19:06.413-0500 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to data.confluent_kafka_cluster.basic
+2022-12-14T15:19:06.413-0500 [TRACE] AttachResourceConfigTransformer: attaching to "confluent_api_key.app-manager-kafka-api-key" (*terraform.NodeValidatableResource) config from test.tf:21,1-57
+2022-12-14T15:19:06.414-0500 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to confluent_api_key.app-manager-kafka-api-key
+2022-12-14T15:19:06.414-0500 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2022-12-14T15:19:06.414-0500 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2022-12-14T15:19:06.414-0500 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2022-12-14T15:19:06.414-0500 [TRACE] ProviderConfigTransformer: attaching to "provider[\"registry.terraform.io/confluentinc/confluent\"]" provider configuration from test.tf:9,1-21
+2022-12-14T15:19:06.414-0500 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key - *terraform.NodeValidatableResource
+  confluent_kafka_topic.orders - *terraform.NodeValidatableResource
+  data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+  provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  var.confluent_cloud_api_key - *terraform.NodeRootVariable
+  var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  ------
+2022-12-14T15:19:06.414-0500 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2022-12-14T15:19:06.414-0500 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2022-12-14T15:19:06.414-0500 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2022-12-14T15:19:06.414-0500 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/confluentinc/confluent"] serving confluent_api_key.app-manager-kafka-api-key
+2022-12-14T15:19:06.414-0500 [DEBUG] ProviderTransformer: "confluent_api_key.app-manager-kafka-api-key" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/confluentinc/confluent"]
+2022-12-14T15:19:06.414-0500 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/confluentinc/confluent"] serving confluent_kafka_topic.orders
+2022-12-14T15:19:06.414-0500 [DEBUG] ProviderTransformer: "confluent_kafka_topic.orders" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/confluentinc/confluent"]
+2022-12-14T15:19:06.414-0500 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/confluentinc/confluent"] serving data.confluent_kafka_cluster.basic
+2022-12-14T15:19:06.414-0500 [DEBUG] ProviderTransformer: "data.confluent_kafka_cluster.basic" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/confluentinc/confluent"]
+2022-12-14T15:19:06.414-0500 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  confluent_kafka_topic.orders - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  var.confluent_cloud_api_key - *terraform.NodeRootVariable
+  var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  ------
+2022-12-14T15:19:06.414-0500 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2022-12-14T15:19:06.414-0500 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2022-12-14T15:19:06.414-0500 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  confluent_api_key.app-manager-kafka-api-key - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  confluent_kafka_topic.orders - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  var.confluent_cloud_api_key - *terraform.NodeRootVariable
+  var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  ------
+2022-12-14T15:19:06.414-0500 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2022-12-14T15:19:06.414-0500 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2022-12-14T15:19:06.414-0500 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2022-12-14T15:19:06.414-0500 [TRACE] AttachSchemaTransformer: attaching resource schema to confluent_api_key.app-manager-kafka-api-key
+2022-12-14T15:19:06.414-0500 [TRACE] AttachSchemaTransformer: attaching resource schema to confluent_kafka_topic.orders
+2022-12-14T15:19:06.414-0500 [TRACE] AttachSchemaTransformer: attaching resource schema to data.confluent_kafka_cluster.basic
+2022-12-14T15:19:06.414-0500 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider["registry.terraform.io/confluentinc/confluent"]
+2022-12-14T15:19:06.414-0500 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2022-12-14T15:19:06.414-0500 [TRACE] Executing graph transform *terraform.ModuleExpansionTransformer
+2022-12-14T15:19:06.414-0500 [TRACE] Completed graph transform *terraform.ModuleExpansionTransformer (no changes)
+2022-12-14T15:19:06.414-0500 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2022-12-14T15:19:06.414-0500 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/confluentinc/confluent\"]" references: [var.confluent_cloud_api_secret var.confluent_cloud_api_key]
+2022-12-14T15:19:06.414-0500 [DEBUG] ReferenceTransformer: "confluent_api_key.app-manager-kafka-api-key" references: [data.confluent_kafka_cluster.basic data.confluent_kafka_cluster.basic data.confluent_kafka_cluster.basic data.confluent_kafka_cluster.basic]
+2022-12-14T15:19:06.414-0500 [DEBUG] ReferenceTransformer: "confluent_kafka_topic.orders" references: [data.confluent_kafka_cluster.basic data.confluent_kafka_cluster.basic confluent_api_key.app-manager-kafka-api-key confluent_api_key.app-manager-kafka-api-key]
+2022-12-14T15:19:06.414-0500 [DEBUG] ReferenceTransformer: "data.confluent_kafka_cluster.basic" references: []
+2022-12-14T15:19:06.414-0500 [DEBUG] ReferenceTransformer: "var.confluent_cloud_api_key" references: []
+2022-12-14T15:19:06.414-0500 [DEBUG] ReferenceTransformer: "var.confluent_cloud_api_secret" references: []
+2022-12-14T15:19:06.414-0500 [TRACE] Completed graph transform *terraform.ReferenceTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key - *terraform.NodeValidatableResource
+    data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  confluent_kafka_topic.orders - *terraform.NodeValidatableResource
+    confluent_api_key.app-manager-kafka-api-key - *terraform.NodeValidatableResource
+    data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+    var.confluent_cloud_api_key - *terraform.NodeRootVariable
+    var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  var.confluent_cloud_api_key - *terraform.NodeRootVariable
+  var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  ------
+2022-12-14T15:19:06.415-0500 [TRACE] Executing graph transform *terraform.AttachDependenciesTransformer
+2022-12-14T15:19:06.415-0500 [TRACE] Completed graph transform *terraform.AttachDependenciesTransformer (no changes)
+2022-12-14T15:19:06.415-0500 [TRACE] Executing graph transform *terraform.attachDataResourceDependsOnTransformer
+2022-12-14T15:19:06.415-0500 [TRACE] attachDataDependenciesTransformer: data.confluent_kafka_cluster.basic depends on []
+2022-12-14T15:19:06.415-0500 [TRACE] Completed graph transform *terraform.attachDataResourceDependsOnTransformer (no changes)
+2022-12-14T15:19:06.415-0500 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2022-12-14T15:19:06.415-0500 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2022-12-14T15:19:06.415-0500 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2022-12-14T15:19:06.415-0500 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2022-12-14T15:19:06.415-0500 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2022-12-14T15:19:06.415-0500 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key - *terraform.NodeValidatableResource
+    data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  confluent_kafka_topic.orders - *terraform.NodeValidatableResource
+    confluent_api_key.app-manager-kafka-api-key - *terraform.NodeValidatableResource
+    data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+    var.confluent_cloud_api_key - *terraform.NodeRootVariable
+    var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  provider["registry.terraform.io/confluentinc/confluent"] (close) - *terraform.graphNodeCloseProvider
+    confluent_api_key.app-manager-kafka-api-key - *terraform.NodeValidatableResource
+    confluent_kafka_topic.orders - *terraform.NodeValidatableResource
+    data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  var.confluent_cloud_api_key - *terraform.NodeRootVariable
+  var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  ------
+2022-12-14T15:19:06.415-0500 [TRACE] Executing graph transform *terraform.CloseRootModuleTransformer
+2022-12-14T15:19:06.415-0500 [TRACE] Completed graph transform *terraform.CloseRootModuleTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key - *terraform.NodeValidatableResource
+    data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  confluent_kafka_topic.orders - *terraform.NodeValidatableResource
+    confluent_api_key.app-manager-kafka-api-key - *terraform.NodeValidatableResource
+    data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+    var.confluent_cloud_api_key - *terraform.NodeRootVariable
+    var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  provider["registry.terraform.io/confluentinc/confluent"] (close) - *terraform.graphNodeCloseProvider
+    confluent_api_key.app-manager-kafka-api-key - *terraform.NodeValidatableResource
+    confluent_kafka_topic.orders - *terraform.NodeValidatableResource
+    data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  root - *terraform.nodeCloseModule
+    provider["registry.terraform.io/confluentinc/confluent"] (close) - *terraform.graphNodeCloseProvider
+  var.confluent_cloud_api_key - *terraform.NodeRootVariable
+  var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  ------
+2022-12-14T15:19:06.415-0500 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2022-12-14T15:19:06.415-0500 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key - *terraform.NodeValidatableResource
+    data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+  confluent_kafka_topic.orders - *terraform.NodeValidatableResource
+    confluent_api_key.app-manager-kafka-api-key - *terraform.NodeValidatableResource
+  data.confluent_kafka_cluster.basic - *terraform.NodeValidatableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+    var.confluent_cloud_api_key - *terraform.NodeRootVariable
+    var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  provider["registry.terraform.io/confluentinc/confluent"] (close) - *terraform.graphNodeCloseProvider
+    confluent_kafka_topic.orders - *terraform.NodeValidatableResource
+  root - *terraform.nodeCloseModule
+    provider["registry.terraform.io/confluentinc/confluent"] (close) - *terraform.graphNodeCloseProvider
+  var.confluent_cloud_api_key - *terraform.NodeRootVariable
+  var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  ------
+2022-12-14T15:19:06.415-0500 [DEBUG] Starting graph walk: walkValidate
+2022-12-14T15:19:06.415-0500 [TRACE] vertex "var.confluent_cloud_api_key": starting visit (*terraform.NodeRootVariable)
+2022-12-14T15:19:06.415-0500 [TRACE] vertex "var.confluent_cloud_api_secret": starting visit (*terraform.NodeRootVariable)
+2022-12-14T15:19:06.415-0500 [TRACE] vertex "var.confluent_cloud_api_secret": visit complete
+2022-12-14T15:19:06.415-0500 [TRACE] vertex "var.confluent_cloud_api_key": visit complete
+2022-12-14T15:19:06.415-0500 [TRACE] vertex "provider[\"registry.terraform.io/confluentinc/confluent\"]": starting visit (*terraform.NodeApplyableProvider)
+2022-12-14T15:19:06.416-0500 [DEBUG] created provider logger: level=trace
+2022-12-14T15:19:06.416-0500 [INFO]  provider: configuring client automatic mTLS
+2022-12-14T15:19:06.428-0500 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64/terraform-provider-confluent_1.20.0 args=[.terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64/terraform-provider-confluent_1.20.0]
+2022-12-14T15:19:06.431-0500 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64/terraform-provider-confluent_1.20.0 pid=12819
+2022-12-14T15:19:06.431-0500 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64/terraform-provider-confluent_1.20.0
+2022-12-14T15:19:06.449-0500 [INFO]  provider.terraform-provider-confluent_1.20.0: configuring server automatic mTLS: timestamp=2022-12-14T15:19:06.448-0500
+2022-12-14T15:19:06.474-0500 [DEBUG] provider: using plugin: version=5
+2022-12-14T15:19:06.474-0500 [DEBUG] provider.terraform-provider-confluent_1.20.0: plugin address: address=/var/folders/rk/jlj4x7pj4js8_8kg4bp4kncr0000gq/T/plugin3887244775 network=unix timestamp=2022-12-14T15:19:06.474-0500
+2022-12-14T15:19:06.497-0500 [TRACE] BuiltinEvalContext: Initialized "provider[\"registry.terraform.io/confluentinc/confluent\"]" provider for provider["registry.terraform.io/confluentinc/confluent"]
+2022-12-14T15:19:06.497-0500 [TRACE] NodeApplyableProvider: validating configuration for provider["registry.terraform.io/confluentinc/confluent"]
+2022-12-14T15:19:06.497-0500 [TRACE] provider.stdio: waiting for stdio data
+2022-12-14T15:19:06.497-0500 [TRACE] buildProviderConfig for provider["registry.terraform.io/confluentinc/confluent"]: using explicit config only
+2022-12-14T15:19:06.497-0500 [TRACE] GRPCProvider: GetProviderSchema
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: @module=sdk.proto tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:490 tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_proto_version=5.2 timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: tf_proto_version=5.2 tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:497 tf_rpc=GetProviderSchema @module=sdk.proto tf_provider_addr=provider timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Getting provider schema: tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:70 @module=sdk.helper_schema timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @module=sdk.helper_schema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_resource_type=confluent_peering tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_provider_addr=provider tf_resource_type=confluent_private_link_access tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_provider_addr=provider tf_resource_type=confluent_identity_provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_resource_type=confluent_kafka_client_quota tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_resource_type=confluent_kafka_topic timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_resource_type=confluent_cluster_link tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_provider_addr=provider timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @module=sdk.helper_schema tf_provider_addr=provider tf_resource_type=confluent_environment tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_rpc=GetProviderSchema @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_resource_type=confluent_service_account @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_resource_type=confluent_connector tf_rpc=GetProviderSchema @module=sdk.helper_schema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_rpc=GetProviderSchema @module=sdk.helper_schema tf_provider_addr=provider tf_resource_type=confluent_kafka_mirror_topic @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_resource_type=confluent_role_binding tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_provider_addr=provider timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_resource_type=confluent_schema_registry_cluster tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_resource_type=confluent_schema tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_resource_type=confluent_api_key @module=sdk.helper_schema tf_provider_addr=provider tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_resource_type=confluent_kafka_cluster_config tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_resource_type=confluent_ksql_cluster timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @module=sdk.helper_schema tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_resource_type=confluent_transit_gateway_attachment @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_provider_addr=provider tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @module=sdk.helper_schema tf_provider_addr=provider tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_resource_type=confluent_network timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_resource_type=confluent_kafka_cluster tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_provider_addr=provider tf_resource_type=confluent_identity_pool tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c @module=sdk.helper_schema timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_provider_addr=provider tf_resource_type=confluent_kafka_acl @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_data_source_type=confluent_network tf_provider_addr=provider timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_rpc=GetProviderSchema @module=sdk.helper_schema tf_data_source_type=confluent_identity_pool tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_data_source_type=confluent_identity_provider tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.498-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_data_source_type=confluent_peering tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_rpc=GetProviderSchema @module=sdk.helper_schema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.499-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @module=sdk.helper_schema tf_provider_addr=provider tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_data_source_type=confluent_role_binding tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.499-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_data_source_type=confluent_schema tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.499-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_provider_addr=provider tf_rpc=GetProviderSchema tf_data_source_type=confluent_kafka_cluster tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c timestamp=2022-12-14T15:19:06.498-0500
+2022-12-14T15:19:06.499-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_rpc=GetProviderSchema @module=sdk.helper_schema tf_data_source_type=confluent_environment tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 timestamp=2022-12-14T15:19:06.499-0500
+2022-12-14T15:19:06.499-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_rpc=GetProviderSchema tf_data_source_type=confluent_ksql_cluster tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema timestamp=2022-12-14T15:19:06.499-0500
+2022-12-14T15:19:06.499-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_data_source_type=confluent_kafka_client_quota tf_rpc=GetProviderSchema tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c timestamp=2022-12-14T15:19:06.499-0500
+2022-12-14T15:19:06.499-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c @module=sdk.helper_schema tf_data_source_type=confluent_transit_gateway_attachment tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.499-0500
+2022-12-14T15:19:06.499-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @module=sdk.helper_schema tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_data_source_type=confluent_service_account tf_provider_addr=provider timestamp=2022-12-14T15:19:06.499-0500
+2022-12-14T15:19:06.499-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_data_source_type=confluent_schema_registry_cluster @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.499-0500
+2022-12-14T15:19:06.499-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_rpc=GetProviderSchema tf_data_source_type=confluent_user tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c timestamp=2022-12-14T15:19:06.499-0500
+2022-12-14T15:19:06.499-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_provider_addr=provider @module=sdk.helper_schema tf_data_source_type=confluent_kafka_topic tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.499-0500
+2022-12-14T15:19:06.499-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_data_source_type=confluent_private_link_access tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.499-0500
+2022-12-14T15:19:06.499-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_data_source_type=confluent_schema_registry_region tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.499-0500
+2022-12-14T15:19:06.499-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @module=sdk.helper_schema tf_data_source_type=confluent_organization tf_provider_addr=provider tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c timestamp=2022-12-14T15:19:06.499-0500
+2022-12-14T15:19:06.499-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:503 @module=sdk.proto tf_proto_version=5.2 tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.499-0500
+2022-12-14T15:19:06.499-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: @module=sdk.proto tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:509 tf_proto_version=5.2 tf_provider_addr=provider tf_req_id=e5ab692a-f34a-221d-de5e-941081ba501c timestamp=2022-12-14T15:19:06.499-0500
+2022-12-14T15:19:06.502-0500 [TRACE] GRPCProvider: ValidateProviderConfig
+2022-12-14T15:19:06.503-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: @module=sdk.proto tf_req_id=57d36846-3496-5a48-507c-95b8a1dce005 tf_proto_version=5.2 tf_provider_addr=provider tf_rpc=PrepareProviderConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:517 timestamp=2022-12-14T15:19:06.503-0500
+2022-12-14T15:19:06.503-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Skipping protocol data file writing because no data directory is set. Use the TF_LOG_SDK_PROTO_DATA_DIR environment variable to enable this functionality.: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/internal/logging/protocol_data.go:38 tf_proto_version=5.2 tf_req_id=57d36846-3496-5a48-507c-95b8a1dce005 tf_rpc=PrepareProviderConfig @module=sdk.proto tf_provider_addr=provider timestamp=2022-12-14T15:19:06.503-0500
+2022-12-14T15:19:06.503-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @module=sdk.proto tf_provider_addr=provider tf_rpc=PrepareProviderConfig tf_req_id=57d36846-3496-5a48-507c-95b8a1dce005 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:525 tf_proto_version=5.2 timestamp=2022-12-14T15:19:06.503-0500
+2022-12-14T15:19:06.503-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Preparing provider configuration: tf_req_id=57d36846-3496-5a48-507c-95b8a1dce005 tf_rpc=PrepareProviderConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:128 @module=sdk.helper_schema tf_provider_addr=provider timestamp=2022-12-14T15:19:06.503-0500
+2022-12-14T15:19:06.503-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=57d36846-3496-5a48-507c-95b8a1dce005 tf_rpc=PrepareProviderConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:216 timestamp=2022-12-14T15:19:06.503-0500
+2022-12-14T15:19:06.505-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=57d36846-3496-5a48-507c-95b8a1dce005 tf_rpc=PrepareProviderConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:218 timestamp=2022-12-14T15:19:06.505-0500
+2022-12-14T15:19:06.505-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: tf_proto_version=5.2 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:531 @module=sdk.proto tf_provider_addr=provider tf_req_id=57d36846-3496-5a48-507c-95b8a1dce005 tf_rpc=PrepareProviderConfig timestamp=2022-12-14T15:19:06.505-0500
+2022-12-14T15:19:06.505-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: tf_req_id=57d36846-3496-5a48-507c-95b8a1dce005 tf_rpc=PrepareProviderConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:538 @module=sdk.proto tf_proto_version=5.2 tf_provider_addr=provider timestamp=2022-12-14T15:19:06.505-0500
+2022-12-14T15:19:06.505-0500 [TRACE] vertex "provider[\"registry.terraform.io/confluentinc/confluent\"]": visit complete
+2022-12-14T15:19:06.505-0500 [TRACE] vertex "data.confluent_kafka_cluster.basic": starting visit (*terraform.NodeValidatableResource)
+2022-12-14T15:19:06.506-0500 [TRACE] GRPCProvider: ValidateDataResourceConfig
+2022-12-14T15:19:06.506-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: tf_rpc=ValidateDataSourceConfig tf_data_source_type=confluent_kafka_cluster tf_proto_version=5.2 tf_req_id=cab3e19a-8481-972d-a7b5-ebe2b2b135c1 tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:618 @module=sdk.proto timestamp=2022-12-14T15:19:06.506-0500
+2022-12-14T15:19:06.506-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @module=sdk.proto tf_data_source_type=confluent_kafka_cluster tf_req_id=cab3e19a-8481-972d-a7b5-ebe2b2b135c1 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:626 tf_proto_version=5.2 tf_provider_addr=provider tf_rpc=ValidateDataSourceConfig timestamp=2022-12-14T15:19:06.506-0500
+2022-12-14T15:19:06.506-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: tf_req_id=cab3e19a-8481-972d-a7b5-ebe2b2b135c1 tf_rpc=ValidateDataSourceConfig @module=sdk.helper_schema tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:272 tf_data_source_type=confluent_kafka_cluster timestamp=2022-12-14T15:19:06.506-0500
+2022-12-14T15:19:06.506-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:274 @module=sdk.helper_schema tf_data_source_type=confluent_kafka_cluster tf_provider_addr=provider tf_req_id=cab3e19a-8481-972d-a7b5-ebe2b2b135c1 tf_rpc=ValidateDataSourceConfig timestamp=2022-12-14T15:19:06.506-0500
+2022-12-14T15:19:06.506-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: @module=sdk.proto tf_req_id=cab3e19a-8481-972d-a7b5-ebe2b2b135c1 tf_rpc=ValidateDataSourceConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:632 tf_data_source_type=confluent_kafka_cluster tf_proto_version=5.2 tf_provider_addr=provider timestamp=2022-12-14T15:19:06.506-0500
+2022-12-14T15:19:06.506-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:638 @module=sdk.proto tf_provider_addr=provider tf_req_id=cab3e19a-8481-972d-a7b5-ebe2b2b135c1 tf_data_source_type=confluent_kafka_cluster tf_proto_version=5.2 tf_rpc=ValidateDataSourceConfig timestamp=2022-12-14T15:19:06.506-0500
+2022-12-14T15:19:06.506-0500 [TRACE] vertex "data.confluent_kafka_cluster.basic": visit complete
+2022-12-14T15:19:06.506-0500 [TRACE] vertex "confluent_api_key.app-manager-kafka-api-key": starting visit (*terraform.NodeValidatableResource)
+2022-12-14T15:19:06.507-0500 [TRACE] GRPCProvider: ValidateResourceConfig
+2022-12-14T15:19:06.507-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: @module=sdk.proto @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:678 tf_proto_version=5.2 tf_provider_addr=provider tf_req_id=cd8aa5c9-84f5-9977-2f99-2f1b0f94afb3 tf_resource_type=confluent_api_key tf_rpc=ValidateResourceTypeConfig timestamp=2022-12-14T15:19:06.507-0500
+2022-12-14T15:19:06.507-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: tf_rpc=ValidateResourceTypeConfig tf_proto_version=5.2 tf_provider_addr=provider tf_req_id=cd8aa5c9-84f5-9977-2f99-2f1b0f94afb3 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:686 @module=sdk.proto tf_resource_type=confluent_api_key timestamp=2022-12-14T15:19:06.507-0500
+2022-12-14T15:19:06.507-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:245 tf_req_id=cd8aa5c9-84f5-9977-2f99-2f1b0f94afb3 tf_rpc=ValidateResourceTypeConfig @module=sdk.helper_schema tf_provider_addr=provider tf_resource_type=confluent_api_key timestamp=2022-12-14T15:19:06.507-0500
+2022-12-14T15:19:06.507-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: @module=sdk.helper_schema tf_req_id=cd8aa5c9-84f5-9977-2f99-2f1b0f94afb3 tf_resource_type=confluent_api_key tf_rpc=ValidateResourceTypeConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:247 tf_provider_addr=provider timestamp=2022-12-14T15:19:06.507-0500
+2022-12-14T15:19:06.507-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:692 tf_proto_version=5.2 tf_req_id=cd8aa5c9-84f5-9977-2f99-2f1b0f94afb3 tf_rpc=ValidateResourceTypeConfig @module=sdk.proto tf_provider_addr=provider tf_resource_type=confluent_api_key timestamp=2022-12-14T15:19:06.507-0500
+2022-12-14T15:19:06.507-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: @module=sdk.proto tf_proto_version=5.2 tf_resource_type=confluent_api_key @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:698 tf_provider_addr=provider tf_req_id=cd8aa5c9-84f5-9977-2f99-2f1b0f94afb3 tf_rpc=ValidateResourceTypeConfig timestamp=2022-12-14T15:19:06.507-0500
+2022-12-14T15:19:06.508-0500 [TRACE] vertex "confluent_api_key.app-manager-kafka-api-key": visit complete
+2022-12-14T15:19:06.508-0500 [TRACE] vertex "confluent_kafka_topic.orders": starting visit (*terraform.NodeValidatableResource)
+2022-12-14T15:19:06.508-0500 [TRACE] GRPCProvider: ValidateResourceConfig
+2022-12-14T15:19:06.508-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: tf_proto_version=5.2 tf_provider_addr=provider tf_rpc=ValidateResourceTypeConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:678 @module=sdk.proto tf_req_id=bdb1d449-1bdc-86aa-b9fb-80d576052efe tf_resource_type=confluent_kafka_topic timestamp=2022-12-14T15:19:06.508-0500
+2022-12-14T15:19:06.508-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:686 @module=sdk.proto tf_provider_addr=provider tf_req_id=bdb1d449-1bdc-86aa-b9fb-80d576052efe tf_proto_version=5.2 tf_resource_type=confluent_kafka_topic tf_rpc=ValidateResourceTypeConfig timestamp=2022-12-14T15:19:06.508-0500
+2022-12-14T15:19:06.508-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @module=sdk.helper_schema tf_rpc=ValidateResourceTypeConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:245 tf_provider_addr=provider tf_req_id=bdb1d449-1bdc-86aa-b9fb-80d576052efe tf_resource_type=confluent_kafka_topic timestamp=2022-12-14T15:19:06.508-0500
+2022-12-14T15:19:06.508-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:247 @module=sdk.helper_schema tf_resource_type=confluent_kafka_topic tf_rpc=ValidateResourceTypeConfig tf_provider_addr=provider tf_req_id=bdb1d449-1bdc-86aa-b9fb-80d576052efe timestamp=2022-12-14T15:19:06.508-0500
+2022-12-14T15:19:06.508-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: tf_req_id=bdb1d449-1bdc-86aa-b9fb-80d576052efe tf_resource_type=confluent_kafka_topic tf_rpc=ValidateResourceTypeConfig tf_proto_version=5.2 tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:692 @module=sdk.proto timestamp=2022-12-14T15:19:06.508-0500
+2022-12-14T15:19:06.508-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: tf_proto_version=5.2 tf_rpc=ValidateResourceTypeConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:698 @module=sdk.proto tf_provider_addr=provider tf_req_id=bdb1d449-1bdc-86aa-b9fb-80d576052efe tf_resource_type=confluent_kafka_topic timestamp=2022-12-14T15:19:06.508-0500
+2022-12-14T15:19:06.508-0500 [TRACE] vertex "confluent_kafka_topic.orders": visit complete
+2022-12-14T15:19:06.509-0500 [TRACE] vertex "provider[\"registry.terraform.io/confluentinc/confluent\"] (close)": starting visit (*terraform.graphNodeCloseProvider)
+2022-12-14T15:19:06.509-0500 [TRACE] GRPCProvider: Close
+2022-12-14T15:19:06.509-0500 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = transport is closing"
+2022-12-14T15:19:06.510-0500 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64/terraform-provider-confluent_1.20.0 pid=12819
+2022-12-14T15:19:06.510-0500 [DEBUG] provider: plugin exited
+2022-12-14T15:19:06.510-0500 [TRACE] vertex "provider[\"registry.terraform.io/confluentinc/confluent\"] (close)": visit complete
+2022-12-14T15:19:06.510-0500 [TRACE] vertex "root": starting visit (*terraform.nodeCloseModule)
+2022-12-14T15:19:06.510-0500 [TRACE] vertex "root": visit complete
+2022-12-14T15:19:06.510-0500 [INFO]  backend/local: plan calling Plan
+2022-12-14T15:19:06.511-0500 [DEBUG] Building and walking plan graph for NormalMode
+2022-12-14T15:19:06.511-0500 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2022-12-14T15:19:06.511-0500 [TRACE] ConfigTransformer: Starting for path:
+2022-12-14T15:19:06.511-0500 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key (expand) - *terraform.nodeExpandPlannableResource
+  confluent_kafka_topic.orders (expand) - *terraform.nodeExpandPlannableResource
+  data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+  ------
+2022-12-14T15:19:06.511-0500 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2022-12-14T15:19:06.511-0500 [TRACE] Completed graph transform *terraform.RootVariableTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key (expand) - *terraform.nodeExpandPlannableResource
+  confluent_kafka_topic.orders (expand) - *terraform.nodeExpandPlannableResource
+  data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+  var.confluent_cloud_api_key - *terraform.NodeRootVariable
+  var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  ------
+2022-12-14T15:19:06.511-0500 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2022-12-14T15:19:06.511-0500 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2022-12-14T15:19:06.511-0500 [TRACE] Executing graph transform *terraform.LocalTransformer
+2022-12-14T15:19:06.511-0500 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2022-12-14T15:19:06.511-0500 [TRACE] Executing graph transform *terraform.OutputTransformer
+2022-12-14T15:19:06.511-0500 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2022-12-14T15:19:06.511-0500 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2022-12-14T15:19:06.511-0500 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2022-12-14T15:19:06.511-0500 [TRACE] Executing graph transform *terraform.StateTransformer
+2022-12-14T15:19:06.511-0500 [TRACE] StateTransformer: creating nodes for deposed instance objects only
+2022-12-14T15:19:06.511-0500 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2022-12-14T15:19:06.511-0500 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2022-12-14T15:19:06.511-0500 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2022-12-14T15:19:06.511-0500 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2022-12-14T15:19:06.511-0500 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2022-12-14T15:19:06.511-0500 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2022-12-14T15:19:06.511-0500 [TRACE] AttachResourceConfigTransformer: attaching to "confluent_kafka_topic.orders (expand)" (*terraform.nodeExpandPlannableResource) config from test.tf:38,1-42
+2022-12-14T15:19:06.511-0500 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to confluent_kafka_topic.orders (expand)
+2022-12-14T15:19:06.511-0500 [TRACE] AttachResourceConfigTransformer: attaching to "confluent_api_key.app-manager-kafka-api-key (expand)" (*terraform.nodeExpandPlannableResource) config from test.tf:21,1-57
+2022-12-14T15:19:06.511-0500 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to confluent_api_key.app-manager-kafka-api-key (expand)
+2022-12-14T15:19:06.511-0500 [TRACE] AttachResourceConfigTransformer: attaching to "data.confluent_kafka_cluster.basic (expand)" (*terraform.nodeExpandPlannableResource) config from hcl.Range{Filename:"test.tf", Start:hcl.Pos{Line:14, Column:1, Byte:258}, End:hcl.Pos{Line:14, Column:39, Byte:296}}
+2022-12-14T15:19:06.511-0500 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to data.confluent_kafka_cluster.basic (expand)
+2022-12-14T15:19:06.511-0500 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2022-12-14T15:19:06.511-0500 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2022-12-14T15:19:06.511-0500 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2022-12-14T15:19:06.511-0500 [TRACE] ProviderConfigTransformer: attaching to "provider[\"registry.terraform.io/confluentinc/confluent\"]" provider configuration from test.tf:9,1-21
+2022-12-14T15:19:06.511-0500 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key (expand) - *terraform.nodeExpandPlannableResource
+  confluent_kafka_topic.orders (expand) - *terraform.nodeExpandPlannableResource
+  data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+  provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  var.confluent_cloud_api_key - *terraform.NodeRootVariable
+  var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  ------
+2022-12-14T15:19:06.511-0500 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2022-12-14T15:19:06.511-0500 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2022-12-14T15:19:06.511-0500 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2022-12-14T15:19:06.511-0500 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/confluentinc/confluent"] serving confluent_api_key.app-manager-kafka-api-key (expand)
+2022-12-14T15:19:06.511-0500 [DEBUG] ProviderTransformer: "confluent_api_key.app-manager-kafka-api-key (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/confluentinc/confluent"]
+2022-12-14T15:19:06.511-0500 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/confluentinc/confluent"] serving data.confluent_kafka_cluster.basic (expand)
+2022-12-14T15:19:06.511-0500 [DEBUG] ProviderTransformer: "data.confluent_kafka_cluster.basic (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/confluentinc/confluent"]
+2022-12-14T15:19:06.511-0500 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/confluentinc/confluent"] serving confluent_kafka_topic.orders (expand)
+2022-12-14T15:19:06.511-0500 [DEBUG] ProviderTransformer: "confluent_kafka_topic.orders (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/confluentinc/confluent"]
+2022-12-14T15:19:06.511-0500 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  confluent_kafka_topic.orders (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  var.confluent_cloud_api_key - *terraform.NodeRootVariable
+  var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  ------
+2022-12-14T15:19:06.511-0500 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2022-12-14T15:19:06.511-0500 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2022-12-14T15:19:06.511-0500 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  confluent_api_key.app-manager-kafka-api-key (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  confluent_kafka_topic.orders (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  var.confluent_cloud_api_key - *terraform.NodeRootVariable
+  var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  ------
+2022-12-14T15:19:06.511-0500 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2022-12-14T15:19:06.511-0500 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2022-12-14T15:19:06.511-0500 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2022-12-14T15:19:06.511-0500 [TRACE] AttachSchemaTransformer: attaching resource schema to confluent_kafka_topic.orders (expand)
+2022-12-14T15:19:06.511-0500 [TRACE] AttachSchemaTransformer: attaching resource schema to confluent_api_key.app-manager-kafka-api-key (expand)
+2022-12-14T15:19:06.511-0500 [TRACE] AttachSchemaTransformer: attaching resource schema to data.confluent_kafka_cluster.basic (expand)
+2022-12-14T15:19:06.511-0500 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider["registry.terraform.io/confluentinc/confluent"]
+2022-12-14T15:19:06.512-0500 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2022-12-14T15:19:06.512-0500 [TRACE] Executing graph transform *terraform.ModuleExpansionTransformer
+2022-12-14T15:19:06.512-0500 [TRACE] Completed graph transform *terraform.ModuleExpansionTransformer (no changes)
+2022-12-14T15:19:06.512-0500 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2022-12-14T15:19:06.512-0500 [DEBUG] ReferenceTransformer: "confluent_kafka_topic.orders (expand)" references: [data.confluent_kafka_cluster.basic (expand) data.confluent_kafka_cluster.basic (expand) confluent_api_key.app-manager-kafka-api-key (expand) confluent_api_key.app-manager-kafka-api-key (expand)]
+2022-12-14T15:19:06.512-0500 [DEBUG] ReferenceTransformer: "confluent_api_key.app-manager-kafka-api-key (expand)" references: [data.confluent_kafka_cluster.basic (expand) data.confluent_kafka_cluster.basic (expand) data.confluent_kafka_cluster.basic (expand) data.confluent_kafka_cluster.basic (expand)]
+2022-12-14T15:19:06.512-0500 [DEBUG] ReferenceTransformer: "data.confluent_kafka_cluster.basic (expand)" references: []
+2022-12-14T15:19:06.512-0500 [DEBUG] ReferenceTransformer: "var.confluent_cloud_api_key" references: []
+2022-12-14T15:19:06.512-0500 [DEBUG] ReferenceTransformer: "var.confluent_cloud_api_secret" references: []
+2022-12-14T15:19:06.512-0500 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/confluentinc/confluent\"]" references: [var.confluent_cloud_api_secret var.confluent_cloud_api_key]
+2022-12-14T15:19:06.512-0500 [TRACE] Completed graph transform *terraform.ReferenceTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key (expand) - *terraform.nodeExpandPlannableResource
+    data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  confluent_kafka_topic.orders (expand) - *terraform.nodeExpandPlannableResource
+    confluent_api_key.app-manager-kafka-api-key (expand) - *terraform.nodeExpandPlannableResource
+    data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+    var.confluent_cloud_api_key - *terraform.NodeRootVariable
+    var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  var.confluent_cloud_api_key - *terraform.NodeRootVariable
+  var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  ------
+2022-12-14T15:19:06.512-0500 [TRACE] Executing graph transform *terraform.AttachDependenciesTransformer
+2022-12-14T15:19:06.512-0500 [TRACE] AttachDependenciesTransformer: confluent_kafka_topic.orders depends on [confluent_api_key.app-manager-kafka-api-key data.confluent_kafka_cluster.basic]
+2022-12-14T15:19:06.512-0500 [TRACE] AttachDependenciesTransformer: confluent_api_key.app-manager-kafka-api-key depends on [data.confluent_kafka_cluster.basic]
+2022-12-14T15:19:06.512-0500 [TRACE] AttachDependenciesTransformer: data.confluent_kafka_cluster.basic depends on []
+2022-12-14T15:19:06.512-0500 [TRACE] Completed graph transform *terraform.AttachDependenciesTransformer (no changes)
+2022-12-14T15:19:06.512-0500 [TRACE] Executing graph transform *terraform.attachDataResourceDependsOnTransformer
+2022-12-14T15:19:06.512-0500 [TRACE] attachDataDependenciesTransformer: data.confluent_kafka_cluster.basic depends on []
+2022-12-14T15:19:06.512-0500 [TRACE] Completed graph transform *terraform.attachDataResourceDependsOnTransformer (no changes)
+2022-12-14T15:19:06.512-0500 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2022-12-14T15:19:06.512-0500 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2022-12-14T15:19:06.512-0500 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2022-12-14T15:19:06.512-0500 [TRACE] ForcedCBDTransformer: "confluent_kafka_topic.orders (expand)" (*terraform.nodeExpandPlannableResource) has no CBD descendent, so skipping
+2022-12-14T15:19:06.512-0500 [TRACE] ForcedCBDTransformer: "confluent_api_key.app-manager-kafka-api-key (expand)" (*terraform.nodeExpandPlannableResource) has no CBD descendent, so skipping
+2022-12-14T15:19:06.512-0500 [TRACE] ForcedCBDTransformer: "data.confluent_kafka_cluster.basic (expand)" (*terraform.nodeExpandPlannableResource) has no CBD descendent, so skipping
+2022-12-14T15:19:06.512-0500 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2022-12-14T15:19:06.512-0500 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2022-12-14T15:19:06.512-0500 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key (expand) - *terraform.nodeExpandPlannableResource
+    data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  confluent_kafka_topic.orders (expand) - *terraform.nodeExpandPlannableResource
+    confluent_api_key.app-manager-kafka-api-key (expand) - *terraform.nodeExpandPlannableResource
+    data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+    var.confluent_cloud_api_key - *terraform.NodeRootVariable
+    var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  provider["registry.terraform.io/confluentinc/confluent"] (close) - *terraform.graphNodeCloseProvider
+    confluent_api_key.app-manager-kafka-api-key (expand) - *terraform.nodeExpandPlannableResource
+    confluent_kafka_topic.orders (expand) - *terraform.nodeExpandPlannableResource
+    data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  var.confluent_cloud_api_key - *terraform.NodeRootVariable
+  var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  ------
+2022-12-14T15:19:06.512-0500 [TRACE] Executing graph transform *terraform.CloseRootModuleTransformer
+2022-12-14T15:19:06.512-0500 [TRACE] Completed graph transform *terraform.CloseRootModuleTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key (expand) - *terraform.nodeExpandPlannableResource
+    data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  confluent_kafka_topic.orders (expand) - *terraform.nodeExpandPlannableResource
+    confluent_api_key.app-manager-kafka-api-key (expand) - *terraform.nodeExpandPlannableResource
+    data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+    var.confluent_cloud_api_key - *terraform.NodeRootVariable
+    var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  provider["registry.terraform.io/confluentinc/confluent"] (close) - *terraform.graphNodeCloseProvider
+    confluent_api_key.app-manager-kafka-api-key (expand) - *terraform.nodeExpandPlannableResource
+    confluent_kafka_topic.orders (expand) - *terraform.nodeExpandPlannableResource
+    data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  root - *terraform.nodeCloseModule
+    provider["registry.terraform.io/confluentinc/confluent"] (close) - *terraform.graphNodeCloseProvider
+  var.confluent_cloud_api_key - *terraform.NodeRootVariable
+  var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  ------
+2022-12-14T15:19:06.512-0500 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2022-12-14T15:19:06.512-0500 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key (expand) - *terraform.nodeExpandPlannableResource
+    data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+  confluent_kafka_topic.orders (expand) - *terraform.nodeExpandPlannableResource
+    confluent_api_key.app-manager-kafka-api-key (expand) - *terraform.nodeExpandPlannableResource
+  data.confluent_kafka_cluster.basic (expand) - *terraform.nodeExpandPlannableResource
+    provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+  provider["registry.terraform.io/confluentinc/confluent"] - *terraform.NodeApplyableProvider
+    var.confluent_cloud_api_key - *terraform.NodeRootVariable
+    var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  provider["registry.terraform.io/confluentinc/confluent"] (close) - *terraform.graphNodeCloseProvider
+    confluent_kafka_topic.orders (expand) - *terraform.nodeExpandPlannableResource
+  root - *terraform.nodeCloseModule
+    provider["registry.terraform.io/confluentinc/confluent"] (close) - *terraform.graphNodeCloseProvider
+  var.confluent_cloud_api_key - *terraform.NodeRootVariable
+  var.confluent_cloud_api_secret - *terraform.NodeRootVariable
+  ------
+2022-12-14T15:19:06.512-0500 [DEBUG] Starting graph walk: walkPlan
+2022-12-14T15:19:06.513-0500 [TRACE] vertex "var.confluent_cloud_api_key": starting visit (*terraform.NodeRootVariable)
+2022-12-14T15:19:06.513-0500 [TRACE] vertex "var.confluent_cloud_api_key": visit complete
+2022-12-14T15:19:06.513-0500 [TRACE] vertex "var.confluent_cloud_api_secret": starting visit (*terraform.NodeRootVariable)
+2022-12-14T15:19:06.513-0500 [TRACE] vertex "var.confluent_cloud_api_secret": visit complete
+2022-12-14T15:19:06.513-0500 [TRACE] vertex "provider[\"registry.terraform.io/confluentinc/confluent\"]": starting visit (*terraform.NodeApplyableProvider)
+2022-12-14T15:19:06.513-0500 [DEBUG] created provider logger: level=trace
+2022-12-14T15:19:06.513-0500 [INFO]  provider: configuring client automatic mTLS
+2022-12-14T15:19:06.525-0500 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64/terraform-provider-confluent_1.20.0 args=[.terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64/terraform-provider-confluent_1.20.0]
+2022-12-14T15:19:06.529-0500 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64/terraform-provider-confluent_1.20.0 pid=12820
+2022-12-14T15:19:06.529-0500 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64/terraform-provider-confluent_1.20.0
+2022-12-14T15:19:06.546-0500 [INFO]  provider.terraform-provider-confluent_1.20.0: configuring server automatic mTLS: timestamp=2022-12-14T15:19:06.546-0500
+2022-12-14T15:19:06.572-0500 [DEBUG] provider.terraform-provider-confluent_1.20.0: plugin address: network=unix address=/var/folders/rk/jlj4x7pj4js8_8kg4bp4kncr0000gq/T/plugin2622844540 timestamp=2022-12-14T15:19:06.571-0500
+2022-12-14T15:19:06.572-0500 [DEBUG] provider: using plugin: version=5
+2022-12-14T15:19:06.597-0500 [TRACE] BuiltinEvalContext: Initialized "provider[\"registry.terraform.io/confluentinc/confluent\"]" provider for provider["registry.terraform.io/confluentinc/confluent"]
+2022-12-14T15:19:06.597-0500 [TRACE] NodeApplyableProvider: configuring provider["registry.terraform.io/confluentinc/confluent"]
+2022-12-14T15:19:06.597-0500 [TRACE] buildProviderConfig for provider["registry.terraform.io/confluentinc/confluent"]: using explicit config only
+2022-12-14T15:19:06.597-0500 [TRACE] GRPCProvider: GetProviderSchema
+2022-12-14T15:19:06.597-0500 [TRACE] provider.stdio: waiting for stdio data
+2022-12-14T15:19:06.597-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: @module=sdk.proto tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:490 tf_proto_version=5.2 tf_provider_addr=provider tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.597-0500
+2022-12-14T15:19:06.597-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: tf_rpc=GetProviderSchema @module=sdk.proto @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:497 tf_proto_version=5.2 tf_provider_addr=provider tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 timestamp=2022-12-14T15:19:06.597-0500
+2022-12-14T15:19:06.597-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Getting provider schema: tf_provider_addr=provider tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:70 @module=sdk.helper_schema timestamp=2022-12-14T15:19:06.597-0500
+2022-12-14T15:19:06.597-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @module=sdk.helper_schema tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_resource_type=confluent_transit_gateway_attachment tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.597-0500
+2022-12-14T15:19:06.597-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_provider_addr=provider @module=sdk.helper_schema tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_resource_type=confluent_identity_provider tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 timestamp=2022-12-14T15:19:06.597-0500
+2022-12-14T15:19:06.597-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_provider_addr=provider tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_resource_type=confluent_network timestamp=2022-12-14T15:19:06.597-0500
+2022-12-14T15:19:06.597-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_rpc=GetProviderSchema tf_provider_addr=provider tf_resource_type=confluent_private_link_access @module=sdk.helper_schema tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 timestamp=2022-12-14T15:19:06.597-0500
+2022-12-14T15:19:06.597-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_resource_type=confluent_role_binding @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_provider_addr=provider tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.597-0500
+2022-12-14T15:19:06.597-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_provider_addr=provider tf_resource_type=confluent_schema_registry_cluster tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 timestamp=2022-12-14T15:19:06.597-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_provider_addr=provider tf_rpc=GetProviderSchema @module=sdk.helper_schema tf_resource_type=confluent_schema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 timestamp=2022-12-14T15:19:06.597-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_rpc=GetProviderSchema tf_provider_addr=provider tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_resource_type=confluent_kafka_cluster @module=sdk.helper_schema timestamp=2022-12-14T15:19:06.597-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @module=sdk.helper_schema tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_provider_addr=provider tf_resource_type=confluent_environment tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_resource_type=confluent_identity_pool @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_provider_addr=provider @module=sdk.helper_schema tf_resource_type=confluent_connector tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_resource_type=confluent_kafka_mirror_topic @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_resource_type=confluent_api_key tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_resource_type=confluent_cluster_link @module=sdk.helper_schema tf_provider_addr=provider timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_provider_addr=provider @module=sdk.helper_schema tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_resource_type=confluent_kafka_client_quota tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_resource_type=confluent_kafka_topic @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_provider_addr=provider tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_provider_addr=provider tf_resource_type=confluent_kafka_acl tf_rpc=GetProviderSchema @module=sdk.helper_schema tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema tf_rpc=GetProviderSchema tf_provider_addr=provider tf_resource_type=confluent_peering timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_rpc=GetProviderSchema tf_provider_addr=provider tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_resource_type=confluent_kafka_cluster_config @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 @module=sdk.helper_schema timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 tf_provider_addr=provider tf_resource_type=confluent_ksql_cluster @module=sdk.helper_schema tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found resource type: tf_resource_type=confluent_service_account tf_rpc=GetProviderSchema tf_provider_addr=provider tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 @module=sdk.helper_schema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:86 timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_data_source_type=confluent_schema_registry_region tf_provider_addr=provider @module=sdk.helper_schema tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_data_source_type=confluent_ksql_cluster tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @module=sdk.helper_schema tf_data_source_type=confluent_identity_provider tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_provider_addr=provider tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_rpc=GetProviderSchema @module=sdk.helper_schema tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_data_source_type=confluent_kafka_client_quota tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_data_source_type=confluent_private_link_access tf_provider_addr=provider tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_data_source_type=confluent_role_binding tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_provider_addr=provider tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @module=sdk.helper_schema tf_provider_addr=provider tf_rpc=GetProviderSchema tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_data_source_type=confluent_service_account timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_data_source_type=confluent_user @module=sdk.helper_schema tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_data_source_type=confluent_identity_pool tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_rpc=GetProviderSchema tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @module=sdk.helper_schema tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_data_source_type=confluent_organization tf_provider_addr=provider tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_data_source_type=confluent_schema tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_provider_addr=provider timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_rpc=GetProviderSchema tf_data_source_type=confluent_peering tf_provider_addr=provider tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_rpc=GetProviderSchema tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_data_source_type=confluent_transit_gateway_attachment timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_provider_addr=provider tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_data_source_type=confluent_schema_registry_cluster tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_provider_addr=provider tf_rpc=GetProviderSchema @module=sdk.helper_schema tf_data_source_type=confluent_kafka_cluster tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_data_source_type=confluent_kafka_topic tf_provider_addr=provider tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 @module=sdk.helper_schema tf_rpc=GetProviderSchema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 tf_provider_addr=provider tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_rpc=GetProviderSchema @module=sdk.helper_schema tf_data_source_type=confluent_environment timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Found data source type: tf_data_source_type=confluent_network tf_provider_addr=provider tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:95 @module=sdk.helper_schema tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.598-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:503 @module=sdk.proto tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 tf_proto_version=5.2 tf_provider_addr=provider tf_rpc=GetProviderSchema timestamp=2022-12-14T15:19:06.598-0500
+2022-12-14T15:19:06.599-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: tf_rpc=GetProviderSchema @module=sdk.proto tf_proto_version=5.2 tf_req_id=0d93e8fb-699a-a6e2-2ffa-df37aabfb7e0 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:509 tf_provider_addr=provider timestamp=2022-12-14T15:19:06.599-0500
+2022-12-14T15:19:06.601-0500 [TRACE] GRPCProvider: ValidateProviderConfig
+2022-12-14T15:19:06.602-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: tf_req_id=4e38d4dc-72cd-0284-27e9-abe2b0990f68 tf_rpc=PrepareProviderConfig tf_proto_version=5.2 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:517 @module=sdk.proto tf_provider_addr=provider timestamp=2022-12-14T15:19:06.602-0500
+2022-12-14T15:19:06.602-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Skipping protocol data file writing because no data directory is set. Use the TF_LOG_SDK_PROTO_DATA_DIR environment variable to enable this functionality.: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/internal/logging/protocol_data.go:38 tf_proto_version=5.2 tf_rpc=PrepareProviderConfig @module=sdk.proto tf_provider_addr=provider tf_req_id=4e38d4dc-72cd-0284-27e9-abe2b0990f68 timestamp=2022-12-14T15:19:06.602-0500
+2022-12-14T15:19:06.602-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:525 tf_proto_version=5.2 tf_req_id=4e38d4dc-72cd-0284-27e9-abe2b0990f68 @module=sdk.proto tf_provider_addr=provider tf_rpc=PrepareProviderConfig timestamp=2022-12-14T15:19:06.602-0500
+2022-12-14T15:19:06.602-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Preparing provider configuration: tf_provider_addr=provider tf_req_id=4e38d4dc-72cd-0284-27e9-abe2b0990f68 tf_rpc=PrepareProviderConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:128 @module=sdk.helper_schema timestamp=2022-12-14T15:19:06.602-0500
+2022-12-14T15:19:06.602-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=4e38d4dc-72cd-0284-27e9-abe2b0990f68 tf_rpc=PrepareProviderConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:216 timestamp=2022-12-14T15:19:06.602-0500
+2022-12-14T15:19:06.604-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=4e38d4dc-72cd-0284-27e9-abe2b0990f68 tf_rpc=PrepareProviderConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:218 timestamp=2022-12-14T15:19:06.604-0500
+2022-12-14T15:19:06.604-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:531 @module=sdk.proto tf_proto_version=5.2 tf_req_id=4e38d4dc-72cd-0284-27e9-abe2b0990f68 tf_rpc=PrepareProviderConfig timestamp=2022-12-14T15:19:06.604-0500
+2022-12-14T15:19:06.604-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: tf_proto_version=5.2 tf_req_id=4e38d4dc-72cd-0284-27e9-abe2b0990f68 tf_rpc=PrepareProviderConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:538 @module=sdk.proto tf_provider_addr=provider timestamp=2022-12-14T15:19:06.604-0500
+2022-12-14T15:19:06.605-0500 [WARN]  ValidateProviderConfig from "provider[\"registry.terraform.io/confluentinc/confluent\"]" changed the config value, but that value is unused
+2022-12-14T15:19:06.605-0500 [TRACE] GRPCProvider: ConfigureProvider
+2022-12-14T15:19:06.605-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: @module=sdk.proto tf_rpc=Configure @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:546 tf_proto_version=5.2 tf_provider_addr=provider tf_req_id=267cdbd1-a111-4bd4-468b-40f2e6b50a21 timestamp=2022-12-14T15:19:06.605-0500
+2022-12-14T15:19:06.605-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: tf_proto_version=5.2 tf_provider_addr=provider tf_req_id=267cdbd1-a111-4bd4-468b-40f2e6b50a21 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:554 @module=sdk.proto tf_rpc=Configure timestamp=2022-12-14T15:19:06.605-0500
+2022-12-14T15:19:06.605-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:556 @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=267cdbd1-a111-4bd4-468b-40f2e6b50a21 tf_rpc=Configure timestamp=2022-12-14T15:19:06.605-0500
+2022-12-14T15:19:06.605-0500 [INFO]  provider.terraform-provider-confluent_1.20.0: Initializing Terraform Provider for Confluent Cloud: tf_req_id=267cdbd1-a111-4bd4-468b-40f2e6b50a21 tf_rpc=Configure @caller=src/github.com/confluentinc/terraform-provider-confluent/internal/provider/provider.go:263 @module=provider tf_provider_addr=provider timestamp=2022-12-14T15:19:06.605-0500
+2022-12-14T15:19:06.605-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=267cdbd1-a111-4bd4-468b-40f2e6b50a21 tf_rpc=Configure @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:558 timestamp=2022-12-14T15:19:06.605-0500
+2022-12-14T15:19:06.605-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: tf_req_id=267cdbd1-a111-4bd4-468b-40f2e6b50a21 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:560 @module=sdk.proto tf_proto_version=5.2 tf_provider_addr=provider tf_rpc=Configure timestamp=2022-12-14T15:19:06.605-0500
+2022-12-14T15:19:06.605-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:566 @module=sdk.proto tf_proto_version=5.2 tf_req_id=267cdbd1-a111-4bd4-468b-40f2e6b50a21 tf_rpc=Configure timestamp=2022-12-14T15:19:06.605-0500
+2022-12-14T15:19:06.606-0500 [TRACE] vertex "provider[\"registry.terraform.io/confluentinc/confluent\"]": visit complete
+2022-12-14T15:19:06.606-0500 [TRACE] vertex "data.confluent_kafka_cluster.basic (expand)": starting visit (*terraform.nodeExpandPlannableResource)
+2022-12-14T15:19:06.606-0500 [TRACE] vertex "data.confluent_kafka_cluster.basic (expand)": expanding dynamic subgraph
+2022-12-14T15:19:06.606-0500 [TRACE] vertex "data.confluent_kafka_cluster.basic (expand)": entering dynamic subgraph
+2022-12-14T15:19:06.606-0500 [TRACE] vertex "data.confluent_kafka_cluster.basic": starting visit (*terraform.NodePlannableResource)
+2022-12-14T15:19:06.606-0500 [TRACE] vertex "data.confluent_kafka_cluster.basic": expanding dynamic subgraph
+2022-12-14T15:19:06.606-0500 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2022-12-14T15:19:06.606-0500 [TRACE] ResourceCountTransformer: adding data.confluent_kafka_cluster.basic as *terraform.NodePlannableResourceInstance
+2022-12-14T15:19:06.606-0500 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+  data.confluent_kafka_cluster.basic - *terraform.NodePlannableResourceInstance
+  ------
+2022-12-14T15:19:06.606-0500 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceCountTransformer
+2022-12-14T15:19:06.606-0500 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceCountTransformer (no changes)
+2022-12-14T15:19:06.606-0500 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2022-12-14T15:19:06.606-0500 [TRACE] NodeAbstractResourceInstance.AttachResourceState for data.confluent_kafka_cluster.basic
+2022-12-14T15:19:06.606-0500 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2022-12-14T15:19:06.606-0500 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2022-12-14T15:19:06.606-0500 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2022-12-14T15:19:06.606-0500 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2022-12-14T15:19:06.606-0500 [DEBUG] ReferenceTransformer: "data.confluent_kafka_cluster.basic" references: []
+2022-12-14T15:19:06.606-0500 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2022-12-14T15:19:06.606-0500 [TRACE] Executing graph transform *terraform.RootTransformer
+2022-12-14T15:19:06.606-0500 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2022-12-14T15:19:06.606-0500 [TRACE] vertex "data.confluent_kafka_cluster.basic": entering dynamic subgraph
+2022-12-14T15:19:06.606-0500 [TRACE] vertex "data.confluent_kafka_cluster.basic": starting visit (*terraform.NodePlannableResourceInstance)
+2022-12-14T15:19:06.606-0500 [TRACE] readResourceInstanceState: reading state for data.confluent_kafka_cluster.basic
+2022-12-14T15:19:06.606-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState to prevRunState for data.confluent_kafka_cluster.basic
+2022-12-14T15:19:06.606-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState: writing state object for data.confluent_kafka_cluster.basic
+2022-12-14T15:19:06.607-0500 [TRACE] readDataSource: Re-validating config for data.confluent_kafka_cluster.basic
+2022-12-14T15:19:06.607-0500 [TRACE] GRPCProvider: ValidateDataResourceConfig
+2022-12-14T15:19:06.607-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: @module=sdk.proto tf_data_source_type=confluent_kafka_cluster tf_req_id=4148dd56-a3ae-4658-767d-b6091d9f8649 tf_rpc=ValidateDataSourceConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:618 tf_proto_version=5.2 tf_provider_addr=provider timestamp=2022-12-14T15:19:06.607-0500
+2022-12-14T15:19:06.607-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: tf_data_source_type=confluent_kafka_cluster tf_provider_addr=provider tf_req_id=4148dd56-a3ae-4658-767d-b6091d9f8649 tf_rpc=ValidateDataSourceConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:626 @module=sdk.proto tf_proto_version=5.2 timestamp=2022-12-14T15:19:06.607-0500
+2022-12-14T15:19:06.607-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @module=sdk.helper_schema tf_data_source_type=confluent_kafka_cluster tf_provider_addr=provider tf_rpc=ValidateDataSourceConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:272 tf_req_id=4148dd56-a3ae-4658-767d-b6091d9f8649 timestamp=2022-12-14T15:19:06.607-0500
+2022-12-14T15:19:06.608-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: @module=sdk.helper_schema tf_data_source_type=confluent_kafka_cluster tf_rpc=ValidateDataSourceConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:274 tf_provider_addr=provider tf_req_id=4148dd56-a3ae-4658-767d-b6091d9f8649 timestamp=2022-12-14T15:19:06.608-0500
+2022-12-14T15:19:06.608-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: @module=sdk.proto tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:632 tf_data_source_type=confluent_kafka_cluster tf_proto_version=5.2 tf_req_id=4148dd56-a3ae-4658-767d-b6091d9f8649 tf_rpc=ValidateDataSourceConfig timestamp=2022-12-14T15:19:06.608-0500
+2022-12-14T15:19:06.608-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: tf_rpc=ValidateDataSourceConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:638 @module=sdk.proto tf_data_source_type=confluent_kafka_cluster tf_provider_addr=provider tf_proto_version=5.2 tf_req_id=4148dd56-a3ae-4658-767d-b6091d9f8649 timestamp=2022-12-14T15:19:06.608-0500
+2022-12-14T15:19:06.608-0500 [TRACE] readDataSource: data.confluent_kafka_cluster.basic configuration is complete, so reading from provider
+2022-12-14T15:19:06.608-0500 [TRACE] GRPCProvider: ReadDataSource
+2022-12-14T15:19:06.608-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: tf_rpc=ReadDataSource @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:647 @module=sdk.proto tf_data_source_type=confluent_kafka_cluster tf_proto_version=5.2 tf_provider_addr=provider tf_req_id=5bb74a1f-6d00-b295-8aa1-3b21486bb2d0 timestamp=2022-12-14T15:19:06.608-0500
+2022-12-14T15:19:06.608-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: tf_req_id=5bb74a1f-6d00-b295-8aa1-3b21486bb2d0 tf_proto_version=5.2 tf_provider_addr=provider tf_data_source_type=confluent_kafka_cluster tf_rpc=ReadDataSource @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:656 @module=sdk.proto timestamp=2022-12-14T15:19:06.608-0500
+2022-12-14T15:19:06.608-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/resource.go:942 @module=sdk.helper_schema tf_req_id=5bb74a1f-6d00-b295-8aa1-3b21486bb2d0 tf_rpc=ReadDataSource tf_data_source_type=confluent_kafka_cluster tf_provider_addr=provider timestamp=2022-12-14T15:19:06.608-0500
+2022-12-14T15:19:06.608-0500 [DEBUG] provider.terraform-provider-confluent_1.20.0: Reading Kafka Cluster "id"="lkc-w7dmgm": @module=provider kafka_cluster_id=lkc-w7dmgm tf_rpc=ReadDataSource @caller=src/github.com/confluentinc/terraform-provider-confluent/internal/provider/data_source_kafka_cluster.go:137 tf_data_source_type=confluent_kafka_cluster tf_provider_addr=provider tf_req_id=5bb74a1f-6d00-b295-8aa1-3b21486bb2d0 timestamp=2022-12-14T15:19:06.608-0500
+2022-12-14T15:19:06.608-0500 [DEBUG] provider.terraform-provider-confluent_1.20.0: 2022/12/14 15:19:06 [DEBUG] GET https://api.confluent.cloud/cmk/v2/clusters/lkc-w7dmgm?environment=env-d2m7y
+2022-12-14T15:19:07.098-0500 [DEBUG] provider.terraform-provider-confluent_1.20.0: Fetched Kafka Cluster "lkc-w7dmgm": {"api_version":"cmk/v2","id":"lkc-w7dmgm","kind":"Cluster","metadata":{"created_at":"2022-10-20T18:28:20.978513Z","resource_name":"crn://confluent.cloud/organization=574976ba-6bee-4ee0-ae65-f3d9e240baa3/environment=env-d2m7y/cloud-cluster=lkc-w7dmgm/kafka=lkc-w7dmgm","self":"https://api.confluent.cloud/cmk/v2/clusters/lkc-w7dmgm","updated_at":"2022-10-20T18:28:20.976988Z"},"spec":{"availability":"SINGLE_ZONE","cloud":"AWS","config":{"kind":"Basic"},"display_name":"test_Basic","environment":{"api_version":"org/v2","id":"env-d2m7y","kind":"Environment","related":"https://api.confluent.cloud/org/v2/environments/env-d2m7y","resource_name":"crn://confluent.cloud/organization=574976ba-6bee-4ee0-ae65-f3d9e240baa3/environment=env-d2m7y"},"http_endpoint":"https://pkc-n00kk.us-east-1.aws.confluent.cloud:443","kafka_bootstrap_endpoint":"SASL_SSL://pkc-n00kk.us-east-1.aws.confluent.cloud:9092","region":"us-east-1"},"status":{"phase":"PROVISIONED"}}: @module=provider tf_provider_addr=provider @caller=src/github.com/confluentinc/terraform-provider-confluent/internal/provider/data_source_kafka_cluster.go:148 kafka_cluster_id=lkc-w7dmgm tf_data_source_type=confluent_kafka_cluster tf_req_id=5bb74a1f-6d00-b295-8aa1-3b21486bb2d0 tf_rpc=ReadDataSource timestamp=2022-12-14T15:19:07.098-0500
+2022-12-14T15:19:07.098-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: tf_rpc=ReadDataSource @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/resource.go:944 tf_provider_addr=provider @module=sdk.helper_schema tf_data_source_type=confluent_kafka_cluster tf_req_id=5bb74a1f-6d00-b295-8aa1-3b21486bb2d0 timestamp=2022-12-14T15:19:07.098-0500
+2022-12-14T15:19:07.098-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:662 tf_req_id=5bb74a1f-6d00-b295-8aa1-3b21486bb2d0 tf_rpc=ReadDataSource @module=sdk.proto tf_data_source_type=confluent_kafka_cluster tf_proto_version=5.2 tf_provider_addr=provider timestamp=2022-12-14T15:19:07.098-0500
+2022-12-14T15:19:07.098-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: @module=sdk.proto tf_proto_version=5.2 tf_provider_addr=provider tf_req_id=5bb74a1f-6d00-b295-8aa1-3b21486bb2d0 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:669 tf_data_source_type=confluent_kafka_cluster tf_rpc=ReadDataSource timestamp=2022-12-14T15:19:07.098-0500
+2022-12-14T15:19:07.098-0500 [WARN]  Provider "provider[\"registry.terraform.io/confluentinc/confluent\"]" produced an unexpected new value for data.confluent_kafka_cluster.basic.
+      - .basic: block count changed from 0 to 1
+2022-12-14T15:19:07.098-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState to refreshState for data.confluent_kafka_cluster.basic
+2022-12-14T15:19:07.098-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState: writing state object for data.confluent_kafka_cluster.basic
+2022-12-14T15:19:07.099-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState to workingState for data.confluent_kafka_cluster.basic
+2022-12-14T15:19:07.099-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState: writing state object for data.confluent_kafka_cluster.basic
+2022-12-14T15:19:07.099-0500 [TRACE] vertex "data.confluent_kafka_cluster.basic": visit complete
+2022-12-14T15:19:07.099-0500 [TRACE] vertex "data.confluent_kafka_cluster.basic": dynamic subgraph completed successfully
+2022-12-14T15:19:07.099-0500 [TRACE] vertex "data.confluent_kafka_cluster.basic": visit complete
+2022-12-14T15:19:07.099-0500 [TRACE] vertex "data.confluent_kafka_cluster.basic (expand)": dynamic subgraph completed successfully
+2022-12-14T15:19:07.099-0500 [TRACE] vertex "data.confluent_kafka_cluster.basic (expand)": visit complete
+2022-12-14T15:19:07.099-0500 [TRACE] vertex "confluent_api_key.app-manager-kafka-api-key (expand)": starting visit (*terraform.nodeExpandPlannableResource)
+2022-12-14T15:19:07.099-0500 [TRACE] vertex "confluent_api_key.app-manager-kafka-api-key (expand)": expanding dynamic subgraph
+2022-12-14T15:19:07.099-0500 [TRACE] vertex "confluent_api_key.app-manager-kafka-api-key (expand)": entering dynamic subgraph
+2022-12-14T15:19:07.099-0500 [TRACE] vertex "confluent_api_key.app-manager-kafka-api-key": starting visit (*terraform.NodePlannableResource)
+2022-12-14T15:19:07.099-0500 [TRACE] vertex "confluent_api_key.app-manager-kafka-api-key": expanding dynamic subgraph
+2022-12-14T15:19:07.099-0500 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2022-12-14T15:19:07.099-0500 [TRACE] ResourceCountTransformer: adding confluent_api_key.app-manager-kafka-api-key as *terraform.NodePlannableResourceInstance
+2022-12-14T15:19:07.099-0500 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+  confluent_api_key.app-manager-kafka-api-key - *terraform.NodePlannableResourceInstance
+  ------
+2022-12-14T15:19:07.099-0500 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceCountTransformer
+2022-12-14T15:19:07.099-0500 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceCountTransformer (no changes)
+2022-12-14T15:19:07.099-0500 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2022-12-14T15:19:07.099-0500 [TRACE] NodeAbstractResourceInstance.AttachResourceState for confluent_api_key.app-manager-kafka-api-key
+2022-12-14T15:19:07.099-0500 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2022-12-14T15:19:07.099-0500 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2022-12-14T15:19:07.099-0500 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2022-12-14T15:19:07.099-0500 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2022-12-14T15:19:07.099-0500 [DEBUG] ReferenceTransformer: "confluent_api_key.app-manager-kafka-api-key" references: []
+2022-12-14T15:19:07.099-0500 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2022-12-14T15:19:07.099-0500 [TRACE] Executing graph transform *terraform.RootTransformer
+2022-12-14T15:19:07.099-0500 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2022-12-14T15:19:07.099-0500 [TRACE] vertex "confluent_api_key.app-manager-kafka-api-key": entering dynamic subgraph
+2022-12-14T15:19:07.099-0500 [TRACE] vertex "confluent_api_key.app-manager-kafka-api-key": starting visit (*terraform.NodePlannableResourceInstance)
+2022-12-14T15:19:07.099-0500 [TRACE] readResourceInstanceState: reading state for confluent_api_key.app-manager-kafka-api-key
+2022-12-14T15:19:07.099-0500 [TRACE] upgradeResourceState: schema version of confluent_api_key.app-manager-kafka-api-key is still 0; calling provider "confluent" for any other minor fixups
+2022-12-14T15:19:07.099-0500 [TRACE] GRPCProvider: UpgradeResourceState
+2022-12-14T15:19:07.100-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: @module=sdk.proto tf_resource_type=confluent_api_key tf_proto_version=5.2 tf_provider_addr=provider tf_req_id=802a642d-f456-6703-8335-3f24770264a2 tf_rpc=UpgradeResourceState @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:707 timestamp=2022-12-14T15:19:07.100-0500
+2022-12-14T15:19:07.100-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:714 @module=sdk.proto tf_proto_version=5.2 tf_req_id=802a642d-f456-6703-8335-3f24770264a2 tf_resource_type=confluent_api_key tf_provider_addr=provider tf_rpc=UpgradeResourceState timestamp=2022-12-14T15:19:07.100-0500
+2022-12-14T15:19:07.100-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Upgrading JSON state: @module=sdk.helper_schema @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:323 tf_provider_addr=provider tf_req_id=802a642d-f456-6703-8335-3f24770264a2 tf_resource_type=confluent_api_key tf_rpc=UpgradeResourceState timestamp=2022-12-14T15:19:07.100-0500
+2022-12-14T15:19:07.100-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: tf_proto_version=5.2 tf_provider_addr=provider tf_req_id=802a642d-f456-6703-8335-3f24770264a2 tf_resource_type=confluent_api_key tf_rpc=UpgradeResourceState @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:720 @module=sdk.proto timestamp=2022-12-14T15:19:07.100-0500
+2022-12-14T15:19:07.100-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: tf_provider_addr=provider tf_req_id=802a642d-f456-6703-8335-3f24770264a2 tf_resource_type=confluent_api_key tf_rpc=UpgradeResourceState @module=sdk.proto tf_proto_version=5.2 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:727 timestamp=2022-12-14T15:19:07.100-0500
+2022-12-14T15:19:07.100-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState to prevRunState for confluent_api_key.app-manager-kafka-api-key
+2022-12-14T15:19:07.101-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState: writing state object for confluent_api_key.app-manager-kafka-api-key
+2022-12-14T15:19:07.101-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState to refreshState for confluent_api_key.app-manager-kafka-api-key
+2022-12-14T15:19:07.101-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState: writing state object for confluent_api_key.app-manager-kafka-api-key
+2022-12-14T15:19:07.101-0500 [TRACE] NodeAbstractResourceInstance.refresh for confluent_api_key.app-manager-kafka-api-key
+2022-12-14T15:19:07.101-0500 [TRACE] GRPCProvider: ReadResource
+2022-12-14T15:19:07.101-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: tf_provider_addr=provider tf_req_id=ef099ea6-2202-0d17-e40b-cddeb52fccbc tf_resource_type=confluent_api_key @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:736 @module=sdk.proto tf_proto_version=5.2 tf_rpc=ReadResource timestamp=2022-12-14T15:19:07.101-0500
+2022-12-14T15:19:07.101-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:745 tf_req_id=ef099ea6-2202-0d17-e40b-cddeb52fccbc tf_rpc=ReadResource tf_proto_version=5.2 tf_provider_addr=provider tf_resource_type=confluent_api_key @module=sdk.proto timestamp=2022-12-14T15:19:07.101-0500
+2022-12-14T15:19:07.101-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: tf_req_id=ef099ea6-2202-0d17-e40b-cddeb52fccbc tf_resource_type=confluent_api_key @module=sdk.helper_schema tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/resource.go:1014 tf_rpc=ReadResource timestamp=2022-12-14T15:19:07.101-0500
+2022-12-14T15:19:07.101-0500 [DEBUG] provider.terraform-provider-confluent_1.20.0: Reading API Key "5QGQA6BQWMSCPQGQ": @caller=src/github.com/confluentinc/terraform-provider-confluent/internal/provider/resource_api_key.go:227 api_key_id=5QGQA6BQWMSCPQGQ tf_req_id=ef099ea6-2202-0d17-e40b-cddeb52fccbc tf_resource_type=confluent_api_key @module=provider tf_provider_addr=provider tf_rpc=ReadResource timestamp=2022-12-14T15:19:07.101-0500
+2022-12-14T15:19:07.101-0500 [DEBUG] provider.terraform-provider-confluent_1.20.0: 2022/12/14 15:19:07 [DEBUG] GET https://api.confluent.cloud/iam/v2/api-keys/5QGQA6BQWMSCPQGQ
+2022-12-14T15:19:08.215-0500 [DEBUG] provider.terraform-provider-confluent_1.20.0: Fetched API Key "5QGQA6BQWMSCPQGQ": {"api_version":"iam/v2","id":"5QGQA6BQWMSCPQGQ","kind":"ApiKey","metadata":{"created_at":"2022-12-13T18:58:48.165234Z","resource_name":"crn://api.confluent.cloud/organization=574976ba-6bee-4ee0-ae65-f3d9e240baa3/service-account=sa-9wj30y/api-key=5QGQA6BQWMSCPQGQ","self":"https://api.confluent.cloud/iam/v2/api-keys/5QGQA6BQWMSCPQGQ","updated_at":"2022-12-13T18:58:48.165234Z"},"spec":{"description":"","display_name":"app-manager-kafka-api-key","owner":{"api_version":"iam/v2","id":"sa-9wj30y","kind":"ServiceAccount","related":"https://api.confluent.cloud/iam/v2/service-accounts/sa-9wj30y","resource_name":"crn://api.confluent.cloud/organization=574976ba-6bee-4ee0-ae65-f3d9e240baa3/service-account=sa-9wj30y"},"resource":{"api_version":"cmk/v2","id":"lkc-w7dmgm","kind":"Cluster","related":"https://api.confluent.cloud/cmk/v2/clusters/lkc-w7dmgm","resource_name":"crn://api.confluent.cloud/organization=574976ba-6bee-4ee0-ae65-f3d9e240baa3/kafka=lkc-w7dmgm"},"secret":""}}: api_key_id=5QGQA6BQWMSCPQGQ tf_provider_addr=provider tf_req_id=ef099ea6-2202-0d17-e40b-cddeb52fccbc tf_resource_type=confluent_api_key @module=provider tf_rpc=ReadResource @caller=src/github.com/confluentinc/terraform-provider-confluent/internal/provider/resource_api_key.go:246 timestamp=2022-12-14T15:19:08.215-0500
+2022-12-14T15:19:08.215-0500 [DEBUG] provider.terraform-provider-confluent_1.20.0: Finished reading API Key "5QGQA6BQWMSCPQGQ": @caller=src/github.com/confluentinc/terraform-provider-confluent/internal/provider/resource_api_key.go:252 tf_resource_type=confluent_api_key tf_rpc=ReadResource @module=provider api_key_id=5QGQA6BQWMSCPQGQ tf_provider_addr=provider tf_req_id=ef099ea6-2202-0d17-e40b-cddeb52fccbc timestamp=2022-12-14T15:19:08.215-0500
+2022-12-14T15:19:08.215-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=ef099ea6-2202-0d17-e40b-cddeb52fccbc tf_resource_type=confluent_api_key tf_rpc=ReadResource @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/resource.go:1016 timestamp=2022-12-14T15:19:08.215-0500
+2022-12-14T15:19:08.215-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: tf_proto_version=5.2 tf_provider_addr=provider tf_req_id=ef099ea6-2202-0d17-e40b-cddeb52fccbc tf_rpc=ReadResource @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:751 @module=sdk.proto tf_resource_type=confluent_api_key timestamp=2022-12-14T15:19:08.215-0500
+2022-12-14T15:19:08.215-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: @module=sdk.proto tf_provider_addr=provider tf_resource_type=confluent_api_key @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:758 tf_proto_version=5.2 tf_req_id=ef099ea6-2202-0d17-e40b-cddeb52fccbc tf_rpc=ReadResource timestamp=2022-12-14T15:19:08.215-0500
+2022-12-14T15:19:08.215-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState to refreshState for confluent_api_key.app-manager-kafka-api-key
+2022-12-14T15:19:08.215-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState: writing state object for confluent_api_key.app-manager-kafka-api-key
+2022-12-14T15:19:08.217-0500 [TRACE] Re-validating config for "confluent_api_key.app-manager-kafka-api-key"
+2022-12-14T15:19:08.217-0500 [TRACE] GRPCProvider: ValidateResourceConfig
+2022-12-14T15:19:08.217-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: @module=sdk.proto tf_proto_version=5.2 tf_provider_addr=provider tf_resource_type=confluent_api_key tf_req_id=16afbc74-dc9a-8f2d-c4e8-bbbdd7960817 tf_rpc=ValidateResourceTypeConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:678 timestamp=2022-12-14T15:19:08.217-0500
+2022-12-14T15:19:08.217-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: tf_resource_type=confluent_api_key tf_provider_addr=provider tf_req_id=16afbc74-dc9a-8f2d-c4e8-bbbdd7960817 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:686 @module=sdk.proto tf_proto_version=5.2 tf_rpc=ValidateResourceTypeConfig timestamp=2022-12-14T15:19:08.217-0500
+2022-12-14T15:19:08.217-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @module=sdk.helper_schema tf_req_id=16afbc74-dc9a-8f2d-c4e8-bbbdd7960817 tf_resource_type=confluent_api_key tf_rpc=ValidateResourceTypeConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:245 tf_provider_addr=provider timestamp=2022-12-14T15:19:08.217-0500
+2022-12-14T15:19:08.217-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: tf_resource_type=confluent_api_key @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:247 @module=sdk.helper_schema tf_req_id=16afbc74-dc9a-8f2d-c4e8-bbbdd7960817 tf_provider_addr=provider tf_rpc=ValidateResourceTypeConfig timestamp=2022-12-14T15:19:08.217-0500
+2022-12-14T15:19:08.217-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: @module=sdk.proto tf_proto_version=5.2 tf_provider_addr=provider tf_req_id=16afbc74-dc9a-8f2d-c4e8-bbbdd7960817 tf_resource_type=confluent_api_key @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:692 tf_rpc=ValidateResourceTypeConfig timestamp=2022-12-14T15:19:08.217-0500
+2022-12-14T15:19:08.217-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: @module=sdk.proto tf_proto_version=5.2 tf_provider_addr=provider tf_rpc=ValidateResourceTypeConfig @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:698 tf_req_id=16afbc74-dc9a-8f2d-c4e8-bbbdd7960817 tf_resource_type=confluent_api_key timestamp=2022-12-14T15:19:08.217-0500
+2022-12-14T15:19:08.218-0500 [TRACE] GRPCProvider: PlanResourceChange
+2022-12-14T15:19:08.218-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: tf_proto_version=5.2 tf_req_id=dcfeb3ff-4d8f-3a0b-b5c5-21068aef7699 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:767 @module=sdk.proto tf_provider_addr=provider tf_resource_type=confluent_api_key tf_rpc=PlanResourceChange timestamp=2022-12-14T15:19:08.218-0500
+2022-12-14T15:19:08.218-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: tf_proto_version=5.2 tf_provider_addr=provider @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:778 @module=sdk.proto tf_req_id=dcfeb3ff-4d8f-3a0b-b5c5-21068aef7699 tf_resource_type=confluent_api_key tf_rpc=PlanResourceChange timestamp=2022-12-14T15:19:08.218-0500
+2022-12-14T15:19:08.218-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: tf_proto_version=5.2 tf_provider_addr=provider tf_resource_type=confluent_api_key tf_rpc=PlanResourceChange tf_req_id=dcfeb3ff-4d8f-3a0b-b5c5-21068aef7699 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:784 @module=sdk.proto timestamp=2022-12-14T15:19:08.218-0500
+2022-12-14T15:19:08.218-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: @module=sdk.proto tf_proto_version=5.2 tf_provider_addr=provider tf_req_id=dcfeb3ff-4d8f-3a0b-b5c5-21068aef7699 tf_rpc=PlanResourceChange @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:791 tf_resource_type=confluent_api_key timestamp=2022-12-14T15:19:08.218-0500
+2022-12-14T15:19:08.219-0500 [WARN]  Provider "registry.terraform.io/confluentinc/confluent" produced an invalid plan for confluent_api_key.app-manager-kafka-api-key, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .description: planned value cty.StringVal("") for a non-computed attribute
+      - .disable_wait_for_ready: planned value cty.False for a non-computed attribute
+2022-12-14T15:19:08.219-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState to workingState for confluent_api_key.app-manager-kafka-api-key
+2022-12-14T15:19:08.219-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState: writing state object for confluent_api_key.app-manager-kafka-api-key
+2022-12-14T15:19:08.219-0500 [TRACE] writeChange: recorded NoOp change for confluent_api_key.app-manager-kafka-api-key
+2022-12-14T15:19:08.219-0500 [TRACE] vertex "confluent_api_key.app-manager-kafka-api-key": visit complete
+2022-12-14T15:19:08.219-0500 [TRACE] vertex "confluent_api_key.app-manager-kafka-api-key": dynamic subgraph completed successfully
+2022-12-14T15:19:08.219-0500 [TRACE] vertex "confluent_api_key.app-manager-kafka-api-key": visit complete
+2022-12-14T15:19:08.219-0500 [TRACE] vertex "confluent_api_key.app-manager-kafka-api-key (expand)": dynamic subgraph completed successfully
+2022-12-14T15:19:08.219-0500 [TRACE] vertex "confluent_api_key.app-manager-kafka-api-key (expand)": visit complete
+2022-12-14T15:19:08.219-0500 [TRACE] vertex "confluent_kafka_topic.orders (expand)": starting visit (*terraform.nodeExpandPlannableResource)
+2022-12-14T15:19:08.219-0500 [TRACE] vertex "confluent_kafka_topic.orders (expand)": expanding dynamic subgraph
+2022-12-14T15:19:08.219-0500 [TRACE] vertex "confluent_kafka_topic.orders (expand)": entering dynamic subgraph
+2022-12-14T15:19:08.219-0500 [TRACE] vertex "confluent_kafka_topic.orders": starting visit (*terraform.NodePlannableResource)
+2022-12-14T15:19:08.219-0500 [TRACE] vertex "confluent_kafka_topic.orders": expanding dynamic subgraph
+2022-12-14T15:19:08.219-0500 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2022-12-14T15:19:08.219-0500 [TRACE] ResourceCountTransformer: adding confluent_kafka_topic.orders as *terraform.NodePlannableResourceInstance
+2022-12-14T15:19:08.219-0500 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+  confluent_kafka_topic.orders - *terraform.NodePlannableResourceInstance
+  ------
+2022-12-14T15:19:08.219-0500 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceCountTransformer
+2022-12-14T15:19:08.219-0500 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceCountTransformer (no changes)
+2022-12-14T15:19:08.219-0500 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2022-12-14T15:19:08.219-0500 [TRACE] NodeAbstractResourceInstance.AttachResourceState for confluent_kafka_topic.orders
+2022-12-14T15:19:08.219-0500 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2022-12-14T15:19:08.219-0500 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2022-12-14T15:19:08.219-0500 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2022-12-14T15:19:08.219-0500 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2022-12-14T15:19:08.219-0500 [DEBUG] ReferenceTransformer: "confluent_kafka_topic.orders" references: []
+2022-12-14T15:19:08.220-0500 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2022-12-14T15:19:08.220-0500 [TRACE] Executing graph transform *terraform.RootTransformer
+2022-12-14T15:19:08.220-0500 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2022-12-14T15:19:08.220-0500 [TRACE] vertex "confluent_kafka_topic.orders": entering dynamic subgraph
+2022-12-14T15:19:08.220-0500 [TRACE] vertex "confluent_kafka_topic.orders": starting visit (*terraform.NodePlannableResourceInstance)
+2022-12-14T15:19:08.220-0500 [TRACE] readResourceInstanceState: reading state for confluent_kafka_topic.orders
+2022-12-14T15:19:08.220-0500 [TRACE] upgradeResourceState: schema version of confluent_kafka_topic.orders is still 2; calling provider "confluent" for any other minor fixups
+2022-12-14T15:19:08.220-0500 [TRACE] GRPCProvider: UpgradeResourceState
+2022-12-14T15:19:08.220-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: tf_resource_type=confluent_kafka_topic tf_provider_addr=provider tf_proto_version=5.2 tf_req_id=aa68e2bf-293d-d1bd-ddb0-8eb0c1aafa09 tf_rpc=UpgradeResourceState @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:707 @module=sdk.proto timestamp=2022-12-14T15:19:08.220-0500
+2022-12-14T15:19:08.220-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:714 tf_req_id=aa68e2bf-293d-d1bd-ddb0-8eb0c1aafa09 tf_resource_type=confluent_kafka_topic tf_rpc=UpgradeResourceState tf_proto_version=5.2 tf_provider_addr=provider @module=sdk.proto timestamp=2022-12-14T15:19:08.220-0500
+2022-12-14T15:19:08.220-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Upgrading JSON state: @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=aa68e2bf-293d-d1bd-ddb0-8eb0c1aafa09 tf_resource_type=confluent_kafka_topic tf_rpc=UpgradeResourceState @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/grpc_provider.go:323 timestamp=2022-12-14T15:19:08.220-0500
+2022-12-14T15:19:08.220-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: tf_proto_version=5.2 tf_provider_addr=provider tf_req_id=aa68e2bf-293d-d1bd-ddb0-8eb0c1aafa09 tf_resource_type=confluent_kafka_topic tf_rpc=UpgradeResourceState @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:720 @module=sdk.proto timestamp=2022-12-14T15:19:08.220-0500
+2022-12-14T15:19:08.220-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: tf_resource_type=confluent_kafka_topic tf_rpc=UpgradeResourceState @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:727 tf_proto_version=5.2 tf_provider_addr=provider @module=sdk.proto tf_req_id=aa68e2bf-293d-d1bd-ddb0-8eb0c1aafa09 timestamp=2022-12-14T15:19:08.220-0500
+2022-12-14T15:19:08.221-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState to prevRunState for confluent_kafka_topic.orders
+2022-12-14T15:19:08.221-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState: writing state object for confluent_kafka_topic.orders
+2022-12-14T15:19:08.221-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState to refreshState for confluent_kafka_topic.orders
+2022-12-14T15:19:08.221-0500 [TRACE] NodeAbstractResouceInstance.writeResourceInstanceState: writing state object for confluent_kafka_topic.orders
+2022-12-14T15:19:08.221-0500 [TRACE] NodeAbstractResourceInstance.refresh for confluent_kafka_topic.orders
+2022-12-14T15:19:08.221-0500 [TRACE] GRPCProvider: ReadResource
+2022-12-14T15:19:08.221-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Received request: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:736 tf_req_id=763b5a31-48f2-82a9-68b9-9faac9f17c08 tf_resource_type=confluent_kafka_topic @module=sdk.proto tf_proto_version=5.2 tf_provider_addr=provider tf_rpc=ReadResource timestamp=2022-12-14T15:19:08.221-0500
+2022-12-14T15:19:08.221-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: tf_proto_version=5.2 tf_req_id=763b5a31-48f2-82a9-68b9-9faac9f17c08 tf_resource_type=confluent_kafka_topic @module=sdk.proto tf_provider_addr=provider tf_rpc=ReadResource @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:745 timestamp=2022-12-14T15:19:08.221-0500
+2022-12-14T15:19:08.222-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Calling downstream: @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/resource.go:1014 @module=sdk.helper_schema tf_req_id=763b5a31-48f2-82a9-68b9-9faac9f17c08 tf_resource_type=confluent_kafka_topic tf_provider_addr=provider tf_rpc=ReadResource timestamp=2022-12-14T15:19:08.222-0500
+2022-12-14T15:19:08.222-0500 [DEBUG] provider.terraform-provider-confluent_1.20.0: Reading Kafka Topic "lkc-w7dmgm/orders": tf_req_id=763b5a31-48f2-82a9-68b9-9faac9f17c08 @caller=src/github.com/confluentinc/terraform-provider-confluent/internal/provider/resource_kafka_topic.go:255 kafka_topic_id=lkc-w7dmgm/orders tf_provider_addr=provider tf_resource_type=confluent_kafka_topic tf_rpc=ReadResource @module=provider timestamp=2022-12-14T15:19:08.222-0500
+2022-12-14T15:19:08.222-0500 [DEBUG] provider.terraform-provider-confluent_1.20.0: 2022/12/14 15:19:08 [DEBUG] GET https://pkc-n00kk.us-east-1.aws.confluent.cloud:443/kafka/v3/clusters/lkc-w7dmgm/topics/orders
+2022-12-14T15:19:08.537-0500 [DEBUG] provider.terraform-provider-confluent_1.20.0: Fetched Kafka Topic "lkc-w7dmgm/orders": {"cluster_id":"lkc-w7dmgm","configs":{"related":"https://pkc-n00kk.us-east-1.aws.confluent.cloud/kafka/v3/clusters/lkc-w7dmgm/topics/orders/configs"},"is_internal":false,"kind":"KafkaTopic","metadata":{"resource_name":"crn:///kafka=lkc-w7dmgm/topic=orders","self":"https://pkc-n00kk.us-east-1.aws.confluent.cloud/kafka/v3/clusters/lkc-w7dmgm/topics/orders"},"partition_reassignments":{"related":"https://pkc-n00kk.us-east-1.aws.confluent.cloud/kafka/v3/clusters/lkc-w7dmgm/topics/orders/partitions/-/reassignment"},"partitions":{"related":"https://pkc-n00kk.us-east-1.aws.confluent.cloud/kafka/v3/clusters/lkc-w7dmgm/topics/orders/partitions"},"partitions_count":4,"replication_factor":3,"topic_name":"orders"}: kafka_topic_id=lkc-w7dmgm/orders tf_provider_addr=provider tf_resource_type=confluent_kafka_topic tf_rpc=ReadResource @caller=src/github.com/confluentinc/terraform-provider-confluent/internal/provider/resource_kafka_topic.go:393 @module=provider tf_req_id=763b5a31-48f2-82a9-68b9-9faac9f17c08 timestamp=2022-12-14T15:19:08.536-0500
+2022-12-14T15:19:08.537-0500 [DEBUG] provider.terraform-provider-confluent_1.20.0: 2022/12/14 15:19:08 [DEBUG] GET https://pkc-n00kk.us-east-1.aws.confluent.cloud:443/kafka/v3/clusters/lkc-w7dmgm/topics/orders/configs
+2022-12-14T15:19:08.693-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: tf_rpc=ReadResource @caller=pkg/mod/github.com/hashicorp/terraform-plugin-sdk/v2@v2.16.0/helper/schema/resource.go:1016 @module=sdk.helper_schema tf_provider_addr=provider tf_req_id=763b5a31-48f2-82a9-68b9-9faac9f17c08 tf_resource_type=confluent_kafka_topic timestamp=2022-12-14T15:19:08.693-0500
+2022-12-14T15:19:08.693-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Called downstream: @module=sdk.proto tf_provider_addr=provider tf_resource_type=confluent_kafka_topic @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:751 tf_proto_version=5.2 tf_req_id=763b5a31-48f2-82a9-68b9-9faac9f17c08 tf_rpc=ReadResource timestamp=2022-12-14T15:19:08.693-0500
+2022-12-14T15:19:08.693-0500 [TRACE] provider.terraform-provider-confluent_1.20.0: Served request: @module=sdk.proto tf_proto_version=5.2 @caller=pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.9.0/tfprotov5/tf5server/server.go:758 tf_resource_type=confluent_kafka_topic tf_rpc=ReadResource tf_provider_addr=provider tf_req_id=763b5a31-48f2-82a9-68b9-9faac9f17c08 timestamp=2022-12-14T15:19:08.693-0500
+2022-12-14T15:19:08.694-0500 [ERROR] vertex "confluent_kafka_topic.orders" error: error reading Kafka Topic: error reading Kafka Topic "orders": could not load configs 403 Forbidden
+2022-12-14T15:19:08.694-0500 [TRACE] vertex "confluent_kafka_topic.orders": visit complete, with errors
+2022-12-14T15:19:08.694-0500 [TRACE] vertex "confluent_kafka_topic.orders": dynamic subgraph encountered errors: error reading Kafka Topic: error reading Kafka Topic "orders": could not load configs 403 Forbidden
+2022-12-14T15:19:08.694-0500 [ERROR] vertex "confluent_kafka_topic.orders" error: error reading Kafka Topic: error reading Kafka Topic "orders": could not load configs 403 Forbidden
+2022-12-14T15:19:08.694-0500 [TRACE] vertex "confluent_kafka_topic.orders": visit complete, with errors
+2022-12-14T15:19:08.694-0500 [TRACE] vertex "confluent_kafka_topic.orders (expand)": dynamic subgraph encountered errors: error reading Kafka Topic: error reading Kafka Topic "orders": could not load configs 403 Forbidden
+2022-12-14T15:19:08.694-0500 [ERROR] vertex "confluent_kafka_topic.orders (expand)" error: error reading Kafka Topic: error reading Kafka Topic "orders": could not load configs 403 Forbidden
+2022-12-14T15:19:08.694-0500 [TRACE] vertex "confluent_kafka_topic.orders (expand)": visit complete, with errors
+2022-12-14T15:19:08.694-0500 [TRACE] dag/walk: upstream of "provider[\"registry.terraform.io/confluentinc/confluent\"] (close)" errored, so skipping
+2022-12-14T15:19:08.694-0500 [TRACE] dag/walk: upstream of "root" errored, so skipping
+2022-12-14T15:19:08.694-0500 [INFO]  backend/local: plan operation completed
+2022-12-14T15:19:08.695-0500 [TRACE] statemgr.Filesystem: removing lock metadata file .terraform.tfstate.lock.info
+2022-12-14T15:19:08.695-0500 [TRACE] statemgr.Filesystem: unlocking terraform.tfstate using fcntl flock
+2022-12-14T15:19:08.696-0500 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = transport is closing"
+2022-12-14T15:19:08.698-0500 [DEBUG] provider: plugin process exited: path=.terraform/providers/registry.terraform.io/confluentinc/confluent/1.20.0/darwin_amd64/terraform-provider-confluent_1.20.0 pid=12820
+2022-12-14T15:19:08.698-0500 [DEBUG] provider: plugin exited
