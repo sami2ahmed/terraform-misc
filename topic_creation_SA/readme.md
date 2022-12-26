@@ -1,4 +1,4 @@
-# running this will create
-1. topic called orders
-2. new api key underneath the SA created by "creds_SA"
-3. must give the SA ALLOW on "*" topics LITERAL pattern. Give it CREATE and READ permissions.  
+# running this will create the following, you can validate this as well by running "terraform plan" 
+1. a topic, 'my-topic', with 4 partitions on an existing basic cluster
+2. new api key/secret pair associated with a new SA, 'topic-creator'
+3. 'topic-creator' will have Cloudclusteradmin role created to enable topic creation capability 
