@@ -24,3 +24,15 @@ variable "kafka_cluster_id" {
   description = "The ID of the Kafka cluster exists"
   type        = string
 }
+
+variable "kafka_api_key" {
+  description = "Kafka API Key that is owned by 'app-manager' service account (CloudClusterAdmin)"
+  type        = string
+  sensitive   = true
+}
+
+variable "kafka_api_secret" {
+  description = "Kafka API Secret that is owned by 'app-manager' service account (CloudClusterAdmin)"
+  type        = string
+  sensitive   = true
+}

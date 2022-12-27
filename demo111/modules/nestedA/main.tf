@@ -50,8 +50,8 @@ resource "confluent_kafka_acl" "app-producer-write-on-topic" {
   permission    = "ALLOW"
   rest_endpoint = data.confluent_kafka_cluster.basic.rest_endpoint
   credentials {
-    key    = confluent_api_key.app-manager-kafka-api-key.id
-    secret = confluent_api_key.app-manager-kafka-api-key.secret
+    key    = var.kafka_api_key
+    secret = var.kafka_api_secret
   }
 }
 
@@ -97,8 +97,8 @@ resource "confluent_kafka_acl" "app-consumer-read-on-topic" {
   permission    = "ALLOW"
   rest_endpoint = data.confluent_kafka_cluster.basic.rest_endpoint
   credentials {
-    key    = confluent_api_key.app-manager-kafka-api-key.id
-    secret = confluent_api_key.app-manager-kafka-api-key.secret
+    key    = var.kafka_api_key
+    secret = var.kafka_api_secret
   }
 }
 
@@ -119,7 +119,7 @@ resource "confluent_kafka_acl" "app-consumer-read-on-group" {
   permission    = "ALLOW"
   rest_endpoint = data.confluent_kafka_cluster.basic.rest_endpoint
   credentials {
-    key    = confluent_api_key.app-manager-kafka-api-key.id
-    secret = confluent_api_key.app-manager-kafka-api-key.secret
+    key    = var.kafka_api_key
+    secret = var.kafka_api_secret
   }
 }
