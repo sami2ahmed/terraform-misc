@@ -21,6 +21,6 @@ variable "environment_id" {
 }
 
 variable "kafka_cluster_id" {
-  description = "The ID of the Kafka cluster exists"
+  description = "The ID of the Kafka cluster"
   type        = string
 }
