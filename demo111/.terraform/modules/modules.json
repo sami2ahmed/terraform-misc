@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"child","Source":"./moduels/nestedA","Dir":""}]}
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"child","Source":"./modules/nestedA","Dir":"modules/nestedA"}]}
