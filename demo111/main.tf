@@ -82,4 +82,6 @@ module "child" {
   environment_id             = var.environment_id
   kafka_cluster_id           = var.kafka_cluster_id
   topic_name                 = var.topic_name
+  kafka_api_key              = confluent_api_key.app-manager-kafka-api-key.id
+  kafka_api_secret           = confluent_api_key.app-manager-kafka-api-key.secret
 }
