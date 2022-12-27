@@ -1,41 +1,188 @@
-output "resource-ids" {
-  value = <<-EOT
-  Environment ID:   ${var.environment_id}
-  Kafka Cluster ID: ${data.confluent_kafka_cluster.basic.id}
-  Kafka topic name: ${confluent_kafka_topic.orders.topic_name}
+terraform {
+  required_providers {
+    confluent = {
+      source  = "confluentinc/confluent"
+      version = "1.23.0"
+    }
+  }
+}
+provider "confluent" {
+  cloud_api_key    = var.confluent_cloud_api_key
+  cloud_api_secret = var.confluent_cloud_api_secret
+}
 
-  Service Accounts and their Kafka API Keys (API Keys inherit the permissions granted to the owner):
-  ${confluent_service_account.app-manager.display_name}:                     ${confluent_service_account.app-manager.id}
-  ${confluent_service_account.app-manager.display_name}'s Kafka API Key:     "${confluent_api_key.app-manager-kafka-api-key.id}"
-  ${confluent_service_account.app-manager.display_name}'s Kafka API Secret:  "${confluent_api_key.app-manager-kafka-api-key.secret}"
+data "confluent_kafka_cluster" "basic" {
+  id = var.kafka_cluster_id
+  environment {
+    id = var.environment_id
+  }
+}
 
-  ${confluent_service_account.app-producer.display_name}:                    ${confluent_service_account.app-producer.id}
-  ${confluent_service_account.app-producer.display_name}'s Kafka API Key:    "${confluent_api_key.app-producer-kafka-api-key.id}"
-  ${confluent_service_account.app-producer.display_name}'s Kafka API Secret: "${confluent_api_key.app-producer-kafka-api-key.secret}"
 
-  ${confluent_service_account.app-consumer.display_name}:                    ${confluent_service_account.app-consumer.id}
-  ${confluent_service_account.app-consumer.display_name}'s Kafka API Key:    "${confluent_api_key.app-consumer-kafka-api-key.id}"
-  ${confluent_service_account.app-consumer.display_name}'s Kafka API Secret: "${confluent_api_key.app-consumer-kafka-api-key.secret}"
+// 'app-manager' service account is required in this configuration to create 'orders' topic and grant ACLs
+// to 'app-producer' and 'app-consumer' service accounts.
+resource "confluent_service_account" "app-manager" {
+  display_name = "app-manager"
+  description  = "Service account to manage 'inventory' Kafka cluster"
+}
 
-  In order to use the Confluent CLI v2 to produce and consume messages from topic '${confluent_kafka_topic.orders.topic_name}' using Kafka API Keys
-  of ${confluent_service_account.app-producer.display_name} and ${confluent_service_account.app-consumer.display_name} service accounts
-  run the following commands:
+resource "confluent_role_binding" "app-manager-kafka-cluster-admin" {
+  principal   = "User:${confluent_service_account.app-manager.id}"
+  role_name   = "CloudClusterAdmin"
+  crn_pattern = data.confluent_kafka_cluster.basic.rbac_crn
+}
 
-  # 1. Log in to Confluent Cloud
-  $ confluent login
+resource "confluent_api_key" "app-manager-kafka-api-key" {
+  display_name = "app-manager-kafka-api-key"
+  description  = "Kafka API Key that is owned by 'app-manager' service account"
+  owner {
+    id          = confluent_service_account.app-manager.id
+    api_version = confluent_service_account.app-manager.api_version
+    kind        = confluent_service_account.app-manager.kind
+  }
 
-  # 2. Produce key-value records to topic '${confluent_kafka_topic.orders.topic_name}' by using ${confluent_service_account.app-producer.display_name}'s Kafka API Key
-  $ confluent kafka topic produce ${confluent_kafka_topic.orders.topic_name} --environment ${var.environment_id} --cluster ${data.confluent_kafka_cluster.basic.id} --api-key "${confluent_api_key.app-producer-kafka-api-key.id}" --api-secret "${confluent_api_key.app-producer-kafka-api-key.secret}"
-  # Enter a few records and then press 'Ctrl-C' when you're done.
-  # Sample records:
-  # {"number":1,"date":18500,"shipping_address":"899 W Evelyn Ave, Mountain View, CA 94041, USA","cost":15.00}
-  # {"number":2,"date":18501,"shipping_address":"1 Bedford St, London WC2E 9HG, United Kingdom","cost":5.00}
-  # {"number":3,"date":18502,"shipping_address":"3307 Northland Dr Suite 400, Austin, TX 78731, USA","cost":10.00}
+  managed_resource {
+    id          = data.confluent_kafka_cluster.basic.id
+    api_version = data.confluent_kafka_cluster.basic.api_version
+    kind        = data.confluent_kafka_cluster.basic.kind
 
-  # 3. Consume records from topic '${confluent_kafka_topic.orders.topic_name}' by using ${confluent_service_account.app-consumer.display_name}'s Kafka API Key
-  $ confluent kafka topic consume ${confluent_kafka_topic.orders.topic_name} --from-beginning --environment ${var.environment_id} --cluster ${data.confluent_kafka_cluster.basic.id} --api-key "${confluent_api_key.app-consumer-kafka-api-key.id}" --api-secret "${confluent_api_key.app-consumer-kafka-api-key.secret}"
-  # When you are done, press 'Ctrl-C'.
-  EOT
+    environment {
+      id = var.environment_id
+    }
+  }
 
-  sensitive = true
+  # The goal is to ensure that confluent_role_binding.app-manager-kafka-cluster-admin is created before
+  # confluent_api_key.app-manager-kafka-api-key is used to create instances of
+  # confluent_kafka_topic, confluent_kafka_acl resources.
+
+  # 'depends_on' meta-argument is specified in confluent_api_key.app-manager-kafka-api-key to avoid having
+  # multiple copies of this definition in the configuration which would happen if we specify it in
+  # confluent_kafka_topic, confluent_kafka_acl resources instead.
+  depends_on = [
+    confluent_role_binding.app-manager-kafka-cluster-admin
+  ]
+}
+
+resource "confluent_kafka_topic" "orders" {
+  kafka_cluster {
+    id = data.confluent_kafka_cluster.basic.id
+  }
+  topic_name    = var.topic_name
+  rest_endpoint = data.confluent_kafka_cluster.basic.rest_endpoint
+  credentials {
+    key    = confluent_api_key.app-manager-kafka-api-key.id
+    secret = confluent_api_key.app-manager-kafka-api-key.secret
+  }
+}
+
+resource "confluent_service_account" "app-consumer" {
+  display_name = "app-consumer"
+  description  = "Service account to consume from 'orders' topic of 'inventory' Kafka cluster"
+}
+
+resource "confluent_api_key" "app-consumer-kafka-api-key" {
+  display_name = "app-consumer-kafka-api-key"
+  description  = "Kafka API Key that is owned by 'app-consumer' service account"
+  owner {
+    id          = confluent_service_account.app-consumer.id
+    api_version = confluent_service_account.app-consumer.api_version
+    kind        = confluent_service_account.app-consumer.kind
+  }
+
+  managed_resource {
+    id          = data.confluent_kafka_cluster.basic.id
+    api_version = data.confluent_kafka_cluster.basic.api_version
+    kind        = data.confluent_kafka_cluster.basic.kind
+
+    environment {
+      id = var.environment_id
+    }
+  }
+}
+
+resource "confluent_kafka_acl" "app-producer-write-on-topic" {
+  kafka_cluster {
+    id = data.confluent_kafka_cluster.basic.id
+  }
+  resource_type = "TOPIC"
+  resource_name = var.topic_name
+  pattern_type  = "LITERAL"
+  principal     = "User:${confluent_service_account.app-producer.id}"
+  host          = "*"
+  operation     = "WRITE"
+  permission    = "ALLOW"
+  rest_endpoint = data.confluent_kafka_cluster.basic.rest_endpoint
+  credentials {
+    key    = confluent_api_key.app-manager-kafka-api-key.id
+    secret = confluent_api_key.app-manager-kafka-api-key.secret
+  }
+}
+
+resource "confluent_service_account" "app-producer" {
+  display_name = "app-producer"
+  description  = "Service account to produce to 'orders' topic of 'inventory' Kafka cluster"
+}
+
+resource "confluent_api_key" "app-producer-kafka-api-key" {
+  display_name = "app-producer-kafka-api-key"
+  description  = "Kafka API Key that is owned by 'app-producer' service account"
+  owner {
+    id          = confluent_service_account.app-producer.id
+    api_version = confluent_service_account.app-producer.api_version
+    kind        = confluent_service_account.app-producer.kind
+  }
+
+  managed_resource {
+    id          = data.confluent_kafka_cluster.basic.id
+    api_version = data.confluent_kafka_cluster.basic.api_version
+    kind        = data.confluent_kafka_cluster.basic.kind
+
+    environment {
+      id = var.environment_id
+    }
+  }
+}
+
+// Note that in order to consume from a topic, the principal of the consumer ('app-consumer' service account)
+// needs to be authorized to perform 'READ' operation on both Topic and Group resources:
+// confluent_kafka_acl.app-consumer-read-on-topic, confluent_kafka_acl.app-consumer-read-on-group.
+// https://docs.confluent.io/platform/current/kafka/authorization.html#using-acls
+resource "confluent_kafka_acl" "app-consumer-read-on-topic" {
+  kafka_cluster {
+    id = data.confluent_kafka_cluster.basic.id
+  }
+  resource_type = "TOPIC"
+  resource_name = confluent_kafka_topic.orders.topic_name
+  pattern_type  = "LITERAL"
+  principal     = "User:${confluent_service_account.app-consumer.id}"
+  host          = "*"
+  operation     = "READ"
+  permission    = "ALLOW"
+  rest_endpoint = data.confluent_kafka_cluster.basic.rest_endpoint
+  credentials {
+    key    = confluent_api_key.app-manager-kafka-api-key.id
+    secret = confluent_api_key.app-manager-kafka-api-key.secret
+  }
+}
+
+resource "confluent_kafka_acl" "app-consumer-read-on-group" {
+  kafka_cluster {
+    id = data.confluent_kafka_cluster.basic.id
+  }
+  resource_type = "GROUP"
+  // The existing values of resource_name, pattern_type attributes are set up to match Confluent CLI's default consumer group ID ("confluent_cli_consumer_<uuid>").
+  // https://docs.confluent.io/confluent-cli/current/command-reference/kafka/topic/confluent_kafka_topic_consume.html
+  // Update the values of resource_name, pattern_type attributes to match your target consumer group ID.
+  // https://docs.confluent.io/platform/current/kafka/authorization.html#prefixed-acls
+  resource_name = "confluent_cli_consumer_"
+  pattern_type  = "PREFIXED"
+  principal     = "User:${confluent_service_account.app-consumer.id}"
+  host          = "*"
+  operation     = "READ"
+  permission    = "ALLOW"
+  rest_endpoint = data.confluent_kafka_cluster.basic.rest_endpoint
+  credentials {
+    key    = confluent_api_key.app-manager-kafka-api-key.id
+    secret = confluent_api_key.app-manager-kafka-api-key.secret
+  }
 }
