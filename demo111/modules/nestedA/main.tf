@@ -12,6 +12,13 @@ provider "confluent" {
   cloud_api_secret = var.confluent_cloud_api_secret
 }
 
+data "confluent_kafka_cluster" "basic" {
+  id = var.kafka_cluster_id
+  environment {
+    id = var.environment_id
+  }
+}
+
 resource "confluent_service_account" "app-consumer" {
   display_name = "app-consumer"
   description  = "Service account to consume from 'orders' topic of 'inventory' Kafka cluster"
