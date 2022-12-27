@@ -96,7 +96,7 @@ resource "confluent_kafka_acl" "app-consumer-read-on-topic" {
     id = data.confluent_kafka_cluster.basic.id
   }
   resource_type = "TOPIC"
-  resource_name = confluent_kafka_topic.orders.topic_name
+  resource_name = var.topic_name
   pattern_type  = "LITERAL"
   principal     = "User:${confluent_service_account.app-consumer.id}"
   host          = "*"
