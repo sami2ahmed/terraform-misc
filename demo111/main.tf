@@ -76,10 +76,10 @@ resource "confluent_kafka_topic" "orders" {
 
 
 module "child" {
-  source = "./modules/nestedA"
-  confluent_cloud_api_key = var.confluent_cloud_api_key
+  source                     = "./modules/nestedA"
+  confluent_cloud_api_key    = var.confluent_cloud_api_key
   confluent_cloud_api_secret = var.confluent_cloud_api_secret
-  environment_id = var.environment_id
-  kafka_cluster_id = var.kafka_cluster_id
-  topic_name = var.topic_name
+  environment_id             = var.environment_id
+  kafka_cluster_id           = var.kafka_cluster_id
+  topic_name                 = var.topic_name
 }
