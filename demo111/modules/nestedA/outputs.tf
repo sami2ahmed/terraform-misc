@@ -30,3 +30,12 @@ output "resource-ids" {
 
   sensitive = true
 }
+
+
+output "app_producer_kafka_api_key_id" {
+  value = confluent_api_key.app-producer-kafka-api-key.id
+}
+
+output "app_producer_kafka_api_key_secret" {
+  value = confluent_api_key.app-producer-kafka-api-key.secret
+}

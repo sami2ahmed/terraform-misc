@@ -15,3 +15,11 @@ output "resource-ids" {
 
   sensitive = true
 }
+
+output "app_producer_kafka_api_key_id" {
+  value = module.child.app_producer_kafka_api_key_id
+}
+
+output "app_producer_kafka_api_key_secret" {
+  value = module.child.app_producer_kafka_api_key_secret
+}
