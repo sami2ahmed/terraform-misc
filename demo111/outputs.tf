@@ -9,6 +9,8 @@ output "resource-ids" {
   ${confluent_service_account.app-manager.display_name}'s Kafka API Key:     "${confluent_api_key.app-manager-kafka-api-key.id}"
   ${confluent_service_account.app-manager.display_name}'s Kafka API Secret:  "${confluent_api_key.app-manager-kafka-api-key.secret}"
 
+  ${module.child.resource-ids}
+
   EOT
 
   sensitive = true
