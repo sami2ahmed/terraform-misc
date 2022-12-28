@@ -19,11 +19,23 @@ variable "topic_name" {
 variable "environment_id" {
   description = "The environment where the Kafka cluster exists"
   type        = string
-  default     = "env-9k5g5v"
+  default     = "env-d2m7y"
 }
 
 variable "kafka_cluster_id" {
   description = "The ID of the Kafka cluster"
   type        = string
-  default     = "lkc-nwom9d"
+  default     = "lkc-w7dmgm"
+}
+
+variable "subscription_id" {
+  description = "The Azure subscription ID where your VNet exists"
+  type        = string
+  default     = "54ff81a0-e7f6-4919-9053-4cdd1c5f5ae1"
+}
+
+variable "tenant_id" {
+  description = "The Azure tenant ID in which Subscription exists"
+  type        = string
+  default     = "0893715b-959b-4906-a185-2789e1ead045"
 }

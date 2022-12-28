@@ -11,6 +11,15 @@ provider "confluent" {
   cloud_api_secret = var.confluent_cloud_api_secret
 }
 
+provider "azurerm" {
+  source  = "hashicorp/azurerm"
+  version = "~> 2.55.0"
+  features {
+  }
+  subscription_id = var.subscription_id
+  tenant_id       = var.tenant_id
+}
+
 data "confluent_kafka_cluster" "basic" {
   id = var.kafka_cluster_id
   environment {
