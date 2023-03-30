@@ -15,28 +15,28 @@ terraform {
 module "confluent" {
   source = "./confluent_module"
 
-  confluent_cloud_api_key = var.confluent_cloud_api_key
+  confluent_cloud_api_key    = var.confluent_cloud_api_key
   confluent_cloud_api_secret = var.confluent_cloud_api_secret
 }
 
 module "dns" {
   source = "./dns_module"
 
-  depends_on = [module.confluent]
-  aws_account_id = var.aws_account_id
-  region = var.region
+  depends_on             = [module.confluent]
+  aws_account_id         = var.aws_account_id
+  region                 = var.region
   subnets_to_privatelink = var.subnets_to_privatelink
-  vpc_id = var.vpc_id
+  vpc_id                 = var.vpc_id
 }
 
 module "kafka_resources" {
-  source          = "./kafka_resources_module"
+  source = "./kafka_resources_module"
 
-  confluent_cloud_api_key = var.confluent_cloud_api_key
+  confluent_cloud_api_key    = var.confluent_cloud_api_key
   confluent_cloud_api_secret = var.confluent_cloud_api_secret
 
-  environment_id  = module.confluent.environment_id
+  environment_id   = module.confluent.environment_id
   kafka_cluster_id = module.confluent.kafka_cluster_id
 
-  depends_on      = [module.dns]
+  depends_on = [module.dns]
 }
