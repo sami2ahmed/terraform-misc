@@ -10,11 +10,11 @@ variable "confluent_cloud_api_secret" {
 }
 
 variable "kafka_cluster_id" {
-  description = "The ID of a Kafka cluster"
+  description = "The ID of the Kafka cluster of the form 'lkc-'"
   type        = string
 }
 
 variable "environment_id" {
-  description = "The ID of an Environment where Kafka cluster exists"
+  description = "The ID of the Environment that the Kafka cluster belongs to of the form 'env-'"
   type        = string
 }
