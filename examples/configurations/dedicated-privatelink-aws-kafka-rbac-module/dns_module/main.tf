@@ -1,6 +1,3 @@
-# https://docs.confluent.io/cloud/current/networking/private-links/aws-privatelink.html
-# Set up the VPC Endpoint for AWS PrivateLink in your AWS account
-# Set up DNS records to use AWS VPC endpoints
 terraform {
   required_version = ">= 0.14.0"
   required_providers {
@@ -8,13 +5,16 @@ terraform {
       source  = "hashicorp/aws"
       version = "= 2.32.0"
     }
+    confluent = {
+      source  = "confluentinc/confluent"
+      version = "1.37.0"
+    }
   }
 }
 
-provider "aws" {
-  region = var.region
-}
-
+# https://docs.confluent.io/cloud/current/networking/private-links/aws-privatelink.html
+# Set up the VPC Endpoint for AWS PrivateLink in your AWS account
+# Set up DNS records to use AWS VPC endpoints
 locals {
   hosted_zone = length(regexall(".glb", confluent_kafka_cluster.dedicated.bootstrap_endpoint)) > 0 ? replace(regex("^[^.]+-([0-9a-zA-Z]+[.].*):[0-9]+$", confluent_kafka_cluster.dedicated.bootstrap_endpoint)[0], "glb.", "") : regex("[.]([0-9a-zA-Z]+[.].*):[0-9]+$", confluent_kafka_cluster.dedicated.bootstrap_endpoint)[0]
 }

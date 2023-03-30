@@ -1,3 +1,13 @@
+terraform {
+  required_version = ">= 0.14.0"
+  required_providers {
+    confluent = {
+      source  = "confluentinc/confluent"
+      version = "1.37.0"
+    }
+  }
+}
+
 data "confluent_kafka_cluster" "dedicated" {
   id = var.kafka_cluster_id
   
