@@ -1,6 +1,16 @@
 # https://docs.confluent.io/cloud/current/networking/private-links/aws-privatelink.html
 # Set up the VPC Endpoint for AWS PrivateLink in your AWS account
 # Set up DNS records to use AWS VPC endpoints
+terraform {
+  required_version = ">= 0.14.0"
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "= 2.32.0"
+    }
+  }
+}
+
 provider "aws" {
   region = var.region
 }
