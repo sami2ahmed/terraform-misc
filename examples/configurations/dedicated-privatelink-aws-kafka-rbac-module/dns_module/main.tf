@@ -12,11 +12,20 @@ terraform {
   }
 }
 
+data "confluent_kafka_cluster" "dedicated" {
+  id = var.kafka_cluster_id
+  
+  environment {
+    id = var.environment_id
+  }
+}
+
+
 # https://docs.confluent.io/cloud/current/networking/private-links/aws-privatelink.html
 # Set up the VPC Endpoint for AWS PrivateLink in your AWS account
 # Set up DNS records to use AWS VPC endpoints
 locals {
-  hosted_zone = length(regexall(".glb", confluent_kafka_cluster.dedicated.bootstrap_endpoint)) > 0 ? replace(regex("^[^.]+-([0-9a-zA-Z]+[.].*):[0-9]+$", confluent_kafka_cluster.dedicated.bootstrap_endpoint)[0], "glb.", "") : regex("[.]([0-9a-zA-Z]+[.].*):[0-9]+$", confluent_kafka_cluster.dedicated.bootstrap_endpoint)[0]
+  hosted_zone = length(regexall(".glb", data.confluent_kafka_cluster.dedicated.bootstrap_endpoint)) > 0 ? replace(regex("^[^.]+-([0-9a-zA-Z]+[.].*):[0-9]+$", data.confluent_kafka_cluster.dedicated.bootstrap_endpoint)[0], "glb.", "") : regex("[.]([0-9a-zA-Z]+[.].*):[0-9]+$", data.confluent_kafka_cluster.dedicated.bootstrap_endpoint)[0]
 }
 
 data "aws_vpc" "privatelink" {
@@ -29,13 +38,13 @@ data "aws_availability_zone" "privatelink" {
 }
 
 locals {
-  bootstrap_prefix = split(".", confluent_kafka_cluster.dedicated.bootstrap_endpoint)[0]
+  bootstrap_prefix = split(".", data.confluent_kafka_cluster.dedicated.bootstrap_endpoint)[0]
 }
 
 resource "aws_security_group" "privatelink" {
   # Ensure that SG is unique, so that this module can be used multiple times within a single VPC
   name        = "ccloud-privatelink_${local.bootstrap_prefix}_${var.vpc_id}"
-  description = "Confluent Cloud Private Link minimal security group for ${confluent_kafka_cluster.dedicated.bootstrap_endpoint} in ${var.vpc_id}"
+  description = "Confluent Cloud Private Link minimal security group for ${data.confluent_kafka_cluster.dedicated.bootstrap_endpoint} in ${var.vpc_id}"
   vpc_id      = data.aws_vpc.privatelink.id
 
   ingress {
@@ -120,3 +129,4 @@ resource "aws_route53_record" "privatelink-zonal" {
     )
   ]
 }
+

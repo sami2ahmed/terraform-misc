@@ -19,8 +19,12 @@ provider "aws" {
 module "confluent" {
   source = "./confluent_module"
 
+  subnets_to_privatelink = var.subnets_to_privatelink
+  region = var.region
+  aws_account_id         = var.aws_account_id
   confluent_cloud_api_key    = var.confluent_cloud_api_key
   confluent_cloud_api_secret = var.confluent_cloud_api_secret
+
 }
 
 module "dns" {
@@ -31,6 +35,8 @@ module "dns" {
   region                 = var.region
   subnets_to_privatelink = var.subnets_to_privatelink
   vpc_id                 = var.vpc_id
+  environment_id   = module.confluent.environment_id
+  kafka_cluster_id = module.confluent.kafka_cluster_id  
 }
 
 module "kafka_resources" {
