@@ -18,3 +18,4 @@ variable "environment_id" {
   description = "The ID of the Environment that the Kafka cluster belongs to of the form 'env-'"
   type        = string
 }
+
