@@ -131,14 +131,14 @@ resource "aws_route53_record" "privatelink-zonal" {
 }
 
 data "confluent_network" "private-link" {
-  display_name = "pl-network"
+  id = var.network_id
   environment {
     id = var.environment_id
   }
 }
 
 data "confluent_private_link_access" "aws" {
-  display_name = "AWS Private Link Access"
+  display_name = var.pla_id
   environment {
     id = var.environment_id
   }

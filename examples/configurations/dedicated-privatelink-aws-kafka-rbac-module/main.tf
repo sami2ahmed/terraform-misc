@@ -34,6 +34,8 @@ module "dns" {
   region                 = var.region
   subnets_to_privatelink = var.subnets_to_privatelink
   vpc_id                 = var.vpc_id
+  network_id             = var.network_id
+  pla_id                 = var.pla_id
   environment_id   = module.confluent.environment_id
   kafka_cluster_id = module.confluent.kafka_cluster_id  
 

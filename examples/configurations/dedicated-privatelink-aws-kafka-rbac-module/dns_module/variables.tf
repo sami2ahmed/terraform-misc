@@ -27,3 +27,13 @@ variable "environment_id" {
   description = "The ID of the Environment that the Kafka cluster belongs to of the form 'env-'"
   type        = string
 }
+
+variable "network_id" {
+  description = "The ID of the conflunet network"
+  type        = string
+}
+
+variable "pla_id" {
+  description = "The ID of the private link"
+  type        = string
+}
