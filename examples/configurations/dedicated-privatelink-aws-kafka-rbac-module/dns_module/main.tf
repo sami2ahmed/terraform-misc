@@ -76,7 +76,7 @@ resource "aws_security_group" "privatelink" {
 
 resource "aws_vpc_endpoint" "privatelink" {
   vpc_id            = data.aws_vpc.privatelink.id
-  service_name      = data.confluent_network.private-link.aws[0].private_link_endpoint_service
+  service_name      = data.confluent_network.private-link.aws[0].private_link_endpoint_service 
   vpc_endpoint_type = "Interface"
 
   security_group_ids = [
@@ -138,7 +138,7 @@ data "confluent_network" "private-link" {
 }
 
 data "confluent_private_link_access" "aws" {
-  display_name = var.pla_id
+  id = var.pla_id
   environment {
     id = var.environment_id
   }
