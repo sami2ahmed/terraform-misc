@@ -37,3 +37,8 @@ variable "pla_id" {
   description = "The ID of the private link"
   type        = string
 }
+
+variable "private_link_endpoint_service" {
+  description = "The ID of the endpoint service"
+  type        = string
+}

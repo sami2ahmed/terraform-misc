@@ -24,6 +24,7 @@ module "confluent" {
   aws_account_id         = var.aws_account_id
   confluent_cloud_api_key    = var.confluent_cloud_api_key
   confluent_cloud_api_secret = var.confluent_cloud_api_secret
+  private_link_endpoint_service = var.private_link_endpoint_service
 }
 
 module "dns" {
@@ -40,6 +41,7 @@ module "dns" {
 
   network_id             = module.confluent.network_id
   pla_id                 = module.confluent.pla_id
+  private_link_endpoint_service = module.confluent.private_link_endpoint_service
 }
 
 module "kafka_resources" {

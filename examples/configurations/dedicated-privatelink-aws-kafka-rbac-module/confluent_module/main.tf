@@ -47,6 +47,9 @@ resource "confluent_network" "private-link" {
   environment {
     id = confluent_environment.staging.id
   }
+  aws {
+    private_link_endpoint_service = var.private_link_endpoint_service
+  }
 }
 
 resource "confluent_private_link_access" "aws" {

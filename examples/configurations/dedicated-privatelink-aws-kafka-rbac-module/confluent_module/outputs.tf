@@ -17,3 +17,8 @@ output "pla_id" {
   description = "The ID of the private link"
   value        = confluent_private_link_access.aws.id
 }
+
+output "private_link_endpoint_service" {
+  description = "The ID of the endpoint service"
+  value        = confluent_network.private-link.aws[0].private_link_endpoint_service
+}
