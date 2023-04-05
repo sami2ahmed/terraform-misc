@@ -23,8 +23,3 @@ variable "aws_account_id" {
   description = "The AWS Account ID (12 digits)"
   type        = string
 }
-
-variable "private_link_endpoint_service" {
-  description = "PE"
-  type        = map(string)
-}
