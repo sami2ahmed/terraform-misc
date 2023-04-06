@@ -12,6 +12,11 @@ terraform {
   }
 }
 
+provider "confluent" {
+  cloud_api_key    = var.confluent_cloud_api_key
+  cloud_api_secret = var.confluent_cloud_api_secret
+}
+
 data "confluent_kafka_cluster" "dedicated" {
   id = var.kafka_cluster_id
   
@@ -139,13 +144,6 @@ data "confluent_network" "private-link" {
 
 data "confluent_private_link_access" "aws" {
   id = var.pla_id
-  environment {
-    id = var.environment_id
-  }
-}
-
-data "confluent_network" "aws" {
-  id = var.private_link_endpoint_service
   environment {
     id = var.environment_id
   }

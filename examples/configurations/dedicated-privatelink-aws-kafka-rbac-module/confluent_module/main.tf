@@ -49,13 +49,6 @@ resource "confluent_network" "private-link" {
   }
 }
 
-# resource "confluent_network" "private_link_endpoint_service" {
-#   private_link_endpoint_service = data.confluent_network.aws[0].private_link_endpoint_service
-#   environment {
-#     id = confluent_environment.staging.id
-#   }
-#   }
-
 resource "confluent_private_link_access" "aws" {
   display_name = "AWS Private Link Access"
   aws {

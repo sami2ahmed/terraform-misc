@@ -29,7 +29,6 @@ module "confluent" {
 module "dns" {
   source = "./dns_module"
 
-  depends_on             = [module.confluent]
   aws_account_id         = var.aws_account_id
   region                 = var.region
   subnets_to_privatelink = var.subnets_to_privatelink
@@ -41,12 +40,13 @@ module "dns" {
   network_id             = module.confluent.network_id
   pla_id                 = module.confluent.pla_id
   private_link_endpoint_service = module.confluent.private_link_endpoint_service
+  confluent_cloud_api_key    = var.confluent_cloud_api_key
+  confluent_cloud_api_secret = var.confluent_cloud_api_secret
 }
 
 module "kafka_resources" {
   source = "./kafka_resources_module"
 
-  depends_on = [module.dns]
   confluent_cloud_api_key    = var.confluent_cloud_api_key
   confluent_cloud_api_secret = var.confluent_cloud_api_secret
 
